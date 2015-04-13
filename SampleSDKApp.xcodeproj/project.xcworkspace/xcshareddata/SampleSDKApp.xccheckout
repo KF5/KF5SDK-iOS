@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>45A67EB4-7E61-44F4-B3CB-3D76524373B3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SampleSDKApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D78782CF38F317C413D6A8EC801B699D15A9A921</key>
+		<string>https://github.com/KF5/KF5SDK</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SampleSDKApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D78782CF38F317C413D6A8EC801B699D15A9A921</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/KF5/KF5SDK</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D78782CF38F317C413D6A8EC801B699D15A9A921</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D78782CF38F317C413D6A8EC801B699D15A9A921</string>
+			<key>IDESourceControlWCCName</key>
+			<string>KF5SDK</string>
+		</dict>
+	</array>
+</dict>
+</plist>
