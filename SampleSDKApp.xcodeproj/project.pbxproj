@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842AD52A1A89AD2700B898EF /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842AD5291A89AD2700B898EF /* KF5SDK.framework */; };
+		845A4A221ADB6E9200576317 /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 845A4A211ADB6E9200576317 /* KF5SDK.bundle */; };
+		845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */; };
+		845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A261ADB6ED300576317 /* ImageIO.framework */; };
+		845A4A291ADB6EDD00576317 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A281ADB6EDD00576317 /* MapKit.framework */; };
+		845A4C3F1ADBE74200576317 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4C3E1ADBE74200576317 /* KF5SDK.framework */; };
 		846B747A1A7F71A800989160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74791A7F71A800989160 /* main.m */; };
 		846B747D1A7F71A800989160 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747C1A7F71A800989160 /* AppDelegate.m */; };
 		846B74801A7F71A800989160 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747F1A7F71A800989160 /* ViewController.m */; };
@@ -26,7 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		842AD5291A89AD2700B898EF /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
+		845A4A211ADB6E9200576317 /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
+		845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		845A4A261ADB6ED300576317 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		845A4A281ADB6EDD00576317 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		845A4C3E1ADBE74200576317 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 		846B74741A7F71A800989160 /* SampleSDKApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSDKApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846B74781A7F71A800989160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B74791A7F71A800989160 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,7 +53,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842AD52A1A89AD2700B898EF /* KF5SDK.framework in Frameworks */,
+				845A4C3F1ADBE74200576317 /* KF5SDK.framework in Frameworks */,
+				845A4A291ADB6EDD00576317 /* MapKit.framework in Frameworks */,
+				845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */,
+				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +91,7 @@
 		846B74761A7F71A800989160 /* SampleSDKApp */ = {
 			isa = PBXGroup;
 			children = (
-				842AD5291A89AD2700B898EF /* KF5SDK.framework */,
+				845A4C3E1ADBE74200576317 /* KF5SDK.framework */,
 				846B747B1A7F71A800989160 /* AppDelegate.h */,
 				846B747C1A7F71A800989160 /* AppDelegate.m */,
 				846B747E1A7F71A800989160 /* ViewController.h */,
@@ -94,6 +105,10 @@
 		846B74771A7F71A800989160 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				845A4A281ADB6EDD00576317 /* MapKit.framework */,
+				845A4A261ADB6ED300576317 /* ImageIO.framework */,
+				845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */,
+				845A4A211ADB6E9200576317 /* KF5SDK.bundle */,
 				846B74781A7F71A800989160 /* Info.plist */,
 				846B74791A7F71A800989160 /* main.m */,
 			);
@@ -198,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				846B74851A7F71A800989160 /* Images.xcassets in Resources */,
+				845A4A221ADB6E9200576317 /* KF5SDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +354,10 @@
 				INFOPLIST_FILE = SampleSDKApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -363,7 +382,10 @@
 				INFOPLIST_FILE = SampleSDKApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

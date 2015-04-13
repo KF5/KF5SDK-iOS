@@ -14,9 +14,12 @@
 
 @end
 
-#define khostName  @"http://b.kf5.co"
-#define kbaseEmail @"ma772528138@qq.com"
-#define ktoken     @"00154d2c7ff672021a2c424c3ae4076"
+#define KFColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define khostName  @"http://tianxiang.kf5.com"
+#define kbaseEmail @"iossdk@kf5.com"
+#define kAppId     @"001552ba3d1cc2efc711d065650f90d99eb6dded16d80a17"
+#define kpassword  @"iossdk"
 
 @implementation AppDelegate
 
@@ -31,18 +34,39 @@
     
     [self.window makeKeyAndVisible];
     
-    // 配置KF5参数
-    [[KF5 sharedKF5]initializeWithHostName:khostName token:ktoken];
-    [[KF5 sharedKF5] setEmail:kbaseEmail andUserName:nil];
+    // 设置日志状态
+#ifdef DEBUG
+    [KFLogger enable:YES];
+#else
+    [KFLogger enable:NO];
+#endif
     
-    // 定义个界面样式
-    [KF5 sharedKF5].TabBarColor = [UIColor colorWithRed:1/255.0 green:174/255.0 blue:240/255.0 alpha:1.0];
-    [KF5 sharedKF5].tabBarItemColor = [UIColor whiteColor];
-    NSMutableDictionary *textAttrs  = [NSMutableDictionary dictionary];
-    textAttrs[UITextAttributeTextColor] = [UIColor whiteColor];
-    textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
-    textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:19];
-    [KF5 sharedKF5].titleTextAttributes = textAttrs;
+    // 初始化配置信息
+    [[KFConfig instance]initializeWithHostName:khostName appId:kAppId];
+    
+    [[KFConfig instance]setEmail:kbaseEmail andUserName:nil PassWord:kpassword WithFailure:nil];
+    
+    
+    // UI配置
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+  
+    [[UINavigationBar appearance]setBarTintColor:[UIColor redColor]];
+    NSDictionary *navbarAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
+    
+
+    [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:18.f]];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
+    [[UINavigationBar appearance]setBarTintColor:KFColor(0, 155, 239)];
+
+
     
     
     return YES;

@@ -4,92 +4,132 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/KF5.h</key>
-		<data>
-		hz0TJzaciUSNvto5fNo7KLYWkDA=
-		</data>
 		<key>Headers/KF5SDK.h</key>
 		<data>
-		V795i9Iu7KZECPRB67qRPh8uZ68=
+		Z69SUGv5JfWpO6aUFXKu2KlX2ng=
+		</data>
+		<key>Headers/KFConfig.h</key>
+		<data>
+		ptY8GHNWXa13D99oCGY8CjD9hUM=
+		</data>
+		<key>Headers/KFCreateRequestUIDelegate.h</key>
+		<data>
+		ThR/sczIc3Dkky4sr10Z9Vo9Myk=
+		</data>
+		<key>Headers/KFCreateRequestView.h</key>
+		<data>
+		H0QgkVy03++C3GWYza6nz4AlXGQ=
+		</data>
+		<key>Headers/KFDispatcher.h</key>
+		<data>
+		LIawId6rYy/KQwDjTxBdUg5JQ+Y=
+		</data>
+		<key>Headers/KFHelpCenter.h</key>
+		<data>
+		WEO/kR0qz+sCoWYDkAcxz+rZjXU=
+		</data>
+		<key>Headers/KFHelpCenterConversationUIDelegate.h</key>
+		<data>
+		QJ5CijcYk8lz7CoCroH4SU0HM2E=
+		</data>
+		<key>Headers/KFHelpCenterListView.h</key>
+		<data>
+		TFjgEX/Uc6yzNiGjzn2TqQHkmX0=
+		</data>
+		<key>Headers/KFLogger.h</key>
+		<data>
+		SdUZwmffg6ApdvIbfPrFAcSO7pw=
+		</data>
+		<key>Headers/KFPostView.h</key>
+		<data>
+		IFQI29NVxa9mAlffgQyhSrdgLmQ=
+		</data>
+		<key>Headers/KFRequestCommentTableCell.h</key>
+		<data>
+		YaZLzjQFrsMMoBVHdH0PN4hq9hE=
+		</data>
+		<key>Headers/KFRequests.h</key>
+		<data>
+		bsYNWi/PtkPexRzwFWU7J+Ewdfw=
+		</data>
+		<key>Headers/KFTicketListView.h</key>
+		<data>
+		jRoVU73GbItI3ytxEHb3xwLvODw=
 		</data>
 		<key>Headers/KFUser.h</key>
 		<data>
-		W/osOlY3A0s+vK4ZiATR5w2R4Vs=
+		hlUG/fQZTR7u2acwlrGHArMTdIE=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		THG0BvoD7p2OYwj0tdXPS+QxP7w=
+		NbFFzU2zoGIQAg5B/gZaND80b84=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		93RgGIrLNXK6qjUN/M51hbN8s8c=
-		</data>
-		<key>image.bundle/agent_default_icon.png</key>
-		<data>
-		8CI2F9Bqoz6sWz2m7Sj61lHeRL0=
-		</data>
-		<key>image.bundle/agent_default_icon_ios7.png</key>
-		<data>
-		RxLT5Wc8n4QaC67jgMDMTtpMRCs=
-		</data>
-		<key>image.bundle/end_user_default_icon.png</key>
-		<data>
-		yErno2GJDHNSpd+FJCbUTyYoD48=
-		</data>
-		<key>image.bundle/end_user_default_icon_ios7.png</key>
-		<data>
-		4Sd6U3UqJCVsko21htBjEK1j4wI=
-		</data>
-		<key>image.bundle/quiz_icon.png</key>
-		<data>
-		1eDargP3WQ9EDvaeBiBrLg0ydYs=
-		</data>
-		<key>image.bundle/quiz_icon_ios7.png</key>
-		<data>
-		DNmxqHWhQfLhc2T6hnlcD351d/w=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/KF5.h</key>
-		<data>
-		hz0TJzaciUSNvto5fNo7KLYWkDA=
-		</data>
 		<key>Headers/KF5SDK.h</key>
 		<data>
-		V795i9Iu7KZECPRB67qRPh8uZ68=
+		Z69SUGv5JfWpO6aUFXKu2KlX2ng=
+		</data>
+		<key>Headers/KFConfig.h</key>
+		<data>
+		ptY8GHNWXa13D99oCGY8CjD9hUM=
+		</data>
+		<key>Headers/KFCreateRequestUIDelegate.h</key>
+		<data>
+		ThR/sczIc3Dkky4sr10Z9Vo9Myk=
+		</data>
+		<key>Headers/KFCreateRequestView.h</key>
+		<data>
+		H0QgkVy03++C3GWYza6nz4AlXGQ=
+		</data>
+		<key>Headers/KFDispatcher.h</key>
+		<data>
+		LIawId6rYy/KQwDjTxBdUg5JQ+Y=
+		</data>
+		<key>Headers/KFHelpCenter.h</key>
+		<data>
+		WEO/kR0qz+sCoWYDkAcxz+rZjXU=
+		</data>
+		<key>Headers/KFHelpCenterConversationUIDelegate.h</key>
+		<data>
+		QJ5CijcYk8lz7CoCroH4SU0HM2E=
+		</data>
+		<key>Headers/KFHelpCenterListView.h</key>
+		<data>
+		TFjgEX/Uc6yzNiGjzn2TqQHkmX0=
+		</data>
+		<key>Headers/KFLogger.h</key>
+		<data>
+		SdUZwmffg6ApdvIbfPrFAcSO7pw=
+		</data>
+		<key>Headers/KFPostView.h</key>
+		<data>
+		IFQI29NVxa9mAlffgQyhSrdgLmQ=
+		</data>
+		<key>Headers/KFRequestCommentTableCell.h</key>
+		<data>
+		YaZLzjQFrsMMoBVHdH0PN4hq9hE=
+		</data>
+		<key>Headers/KFRequests.h</key>
+		<data>
+		bsYNWi/PtkPexRzwFWU7J+Ewdfw=
+		</data>
+		<key>Headers/KFTicketListView.h</key>
+		<data>
+		jRoVU73GbItI3ytxEHb3xwLvODw=
 		</data>
 		<key>Headers/KFUser.h</key>
 		<data>
-		W/osOlY3A0s+vK4ZiATR5w2R4Vs=
+		hlUG/fQZTR7u2acwlrGHArMTdIE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		93RgGIrLNXK6qjUN/M51hbN8s8c=
-		</data>
-		<key>image.bundle/agent_default_icon.png</key>
-		<data>
-		8CI2F9Bqoz6sWz2m7Sj61lHeRL0=
-		</data>
-		<key>image.bundle/agent_default_icon_ios7.png</key>
-		<data>
-		RxLT5Wc8n4QaC67jgMDMTtpMRCs=
-		</data>
-		<key>image.bundle/end_user_default_icon.png</key>
-		<data>
-		yErno2GJDHNSpd+FJCbUTyYoD48=
-		</data>
-		<key>image.bundle/end_user_default_icon_ios7.png</key>
-		<data>
-		4Sd6U3UqJCVsko21htBjEK1j4wI=
-		</data>
-		<key>image.bundle/quiz_icon.png</key>
-		<data>
-		1eDargP3WQ9EDvaeBiBrLg0ydYs=
-		</data>
-		<key>image.bundle/quiz_icon_ios7.png</key>
-		<data>
-		DNmxqHWhQfLhc2T6hnlcD351d/w=
 		</data>
 	</dict>
 	<key>rules</key>

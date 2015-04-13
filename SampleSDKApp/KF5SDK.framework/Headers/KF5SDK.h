@@ -1,19 +1,25 @@
 //
 //  KF5SDK.h
-//  KF5SDK
+//  SampleSDKApp
 //
-//  Created by admin on 15/2/9.
+//  Created by admin on 15/4/7.
 //  Copyright (c) 2015年 admin. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 
-//! Project version number for KF5SDK.
-FOUNDATION_EXPORT double KF5SDKVersionNumber;
 
-//! Project version string for KF5SDK.
-FOUNDATION_EXPORT const unsigned char KF5SDKVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <KF5SDK/PublicHeader.h>
-#import <KF5SDK/KF5.h>
 #import <KF5SDK/KFUser.h>
+#import <KF5SDK/KFLogger.h>
+#import <KF5SDK/KFConfig.h>
+#import <KF5SDK/KFHelpCenter.h>
+#import <KF5SDK/KFRequests.h>
+#import <KF5SDK/KFDispatcher.h>
+#import <KF5SDK/KFHelpCenterConversationUIDelegate.h>
+#import <KF5SDK/KFCreateRequestUIDelegate.h>
+#import <KF5SDK/KFCreateRequestView.h>
+#import <KF5SDK/KFRequestCommentTableCell.h>
+#import <KF5SDK/KFTicketListView.h>
+#import <KF5SDK/KFHelpCenterListView.h>
+#import <KF5SDK/KFPostView.h>
