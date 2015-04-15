@@ -17,7 +17,7 @@
 #define KFColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
 #define khostName  @"http://tianxiang.kf5.com"
-#define kemail @"iossdk@kf5.com"
+#define kemail     @"iossdk@kf5.com"
 #define kAppId     @"001552ba3d1cc2efc711d065650f90d99eb6dded16d80a17"
 #define kpassword  @"iossdk"
 
