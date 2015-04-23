@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/KF5SDK.h</key>
 		<data>
-		Z69SUGv5JfWpO6aUFXKu2KlX2ng=
+		tg/pC+Oxvj03MV/Wy5AU0lLjFuE=
 		</data>
 		<key>Headers/KFConfig.h</key>
 		<data>
@@ -44,6 +44,10 @@
 		<data>
 		IFQI29NVxa9mAlffgQyhSrdgLmQ=
 		</data>
+		<key>Headers/KFPushUtil.h</key>
+		<data>
+		sqfvyUpRc4dHqQiowdGupbzpNOY=
+		</data>
 		<key>Headers/KFRequestCommentTableCell.h</key>
 		<data>
 		YaZLzjQFrsMMoBVHdH0PN4hq9hE=
@@ -58,11 +62,11 @@
 		</data>
 		<key>Headers/KFUser.h</key>
 		<data>
-		hlUG/fQZTR7u2acwlrGHArMTdIE=
+		PB8NU/CICq8vIjGdbySzur0V6Y0=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NbFFzU2zoGIQAg5B/gZaND80b84=
+		ita75qtl1g6N9fgYoZzpvx139fA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -73,7 +77,7 @@
 	<dict>
 		<key>Headers/KF5SDK.h</key>
 		<data>
-		Z69SUGv5JfWpO6aUFXKu2KlX2ng=
+		tg/pC+Oxvj03MV/Wy5AU0lLjFuE=
 		</data>
 		<key>Headers/KFConfig.h</key>
 		<data>
@@ -111,6 +115,10 @@
 		<data>
 		IFQI29NVxa9mAlffgQyhSrdgLmQ=
 		</data>
+		<key>Headers/KFPushUtil.h</key>
+		<data>
+		sqfvyUpRc4dHqQiowdGupbzpNOY=
+		</data>
 		<key>Headers/KFRequestCommentTableCell.h</key>
 		<data>
 		YaZLzjQFrsMMoBVHdH0PN4hq9hE=
@@ -125,7 +133,7 @@
 		</data>
 		<key>Headers/KFUser.h</key>
 		<data>
-		hlUG/fQZTR7u2acwlrGHArMTdIE=
+		PB8NU/CICq8vIjGdbySzur0V6Y0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

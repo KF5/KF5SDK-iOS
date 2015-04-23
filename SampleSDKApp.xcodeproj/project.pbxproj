@@ -16,7 +16,7 @@
 		846B74801A7F71A800989160 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747F1A7F71A800989160 /* ViewController.m */; };
 		846B74851A7F71A800989160 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846B74841A7F71A800989160 /* Images.xcassets */; };
 		846B74941A7F71A800989160 /* SampleSDKAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74931A7F71A800989160 /* SampleSDKAppTests.m */; };
-		84D15BB51ADE10D700E14D43 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D15BB41ADE10D700E14D43 /* KF5SDK.framework */; };
+		84E24AD51AE9158A00DD9F2F /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E24AD41AE9158A00DD9F2F /* KF5SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 		846B748D1A7F71A800989160 /* SampleSDKAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleSDKAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846B74921A7F71A800989160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B74931A7F71A800989160 /* SampleSDKAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleSDKAppTests.m; sourceTree = "<group>"; };
-		84D15BB41ADE10D700E14D43 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
+		84E24AD41AE9158A00DD9F2F /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D15BB51ADE10D700E14D43 /* KF5SDK.framework in Frameworks */,
+				84E24AD51AE9158A00DD9F2F /* KF5SDK.framework in Frameworks */,
 				845A4A291ADB6EDD00576317 /* MapKit.framework in Frameworks */,
 				845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */,
 				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
@@ -91,7 +91,7 @@
 		846B74761A7F71A800989160 /* SampleSDKApp */ = {
 			isa = PBXGroup;
 			children = (
-				84D15BB41ADE10D700E14D43 /* KF5SDK.framework */,
+				84E24AD41AE9158A00DD9F2F /* KF5SDK.framework */,
 				846B747B1A7F71A800989160 /* AppDelegate.h */,
 				846B747C1A7F71A800989160 /* AppDelegate.m */,
 				846B747E1A7F71A800989160 /* ViewController.h */,

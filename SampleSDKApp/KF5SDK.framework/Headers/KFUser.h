@@ -55,4 +55,9 @@
  */
 @property (nonatomic, strong) NSDate *expiresTime;
 
+/**
+ *  helpCenter是否开启
+ */
+@property (nonatomic, assign) BOOL enable_helpCenter;
+
 @end
