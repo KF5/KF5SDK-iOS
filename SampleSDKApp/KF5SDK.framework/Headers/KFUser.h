@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KFUser : NSObject<NSCoding>
+@interface KFUser : NSObject
 
 /**
  *  用户的ID
@@ -53,7 +53,7 @@
 /**
  *  jwtToken的过期时间
  */
-@property (nonatomic, strong) NSDate *expiresTime;
+@property (nonatomic, strong) NSDate *expiresTime; 
 
 /**
  *  helpCenter是否开启

@@ -16,9 +16,7 @@
 
 #define KFColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
-#define khostName  @"http://tianxiang.kf5.com"
 #define kemail     @"iossdk@kf5.com"
-#define kAppId     @"001552ba3d1cc2efc711d065650f90d99eb6dded16d80a17"
 #define kpassword  @"iossdk"
 
 @implementation AppDelegate
@@ -42,8 +40,7 @@
 #endif
     
     // 初始化配置信息
-    [[KFConfig instance]initializeWithHostName:khostName appId:kAppId];
-    
+    [[KFConfig instance]initializeWithHostName:@"http://tianxiang.kf5.com" appId:@"001552ba3d1cc2efc711d065650f90d99eb6dded16d80a17"];
     [[KFConfig instance]setEmail:kemail andUserName:nil PassWord:kpassword WithFailure:nil];
     
     
@@ -68,6 +65,10 @@
 
 
     
+    // 注：视图均遵守UIAppearance协议，可以用appearance修改界面样式
+    [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:15.f]];
+    [[KFHelpCenterListView appearance]setCellTextLabelColor:[UIColor blackColor]];
+    [[KFPostView appearance]setLineHeight:@(1.5)];
     
     return YES;
 }

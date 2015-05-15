@@ -82,7 +82,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)buttonAction1 {
     [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument];
     
-        [KFHelpCenter setNavBarConversationsUIType:KFNavBarConversationsUITypeImage];
+    [KFHelpCenter setNavBarConversationsUIType:KFNavBarConversationsUITypeImage];
 }
 // 反馈问题
 - (void)buttonAction2 {
