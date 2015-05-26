@@ -1,6 +1,6 @@
 kf5 sdk for iOS
 =========================
-官方文档https://develop.kf5.com/ 
+<a href="http://developer.kf5.com/ios" target="_blank">官方文档</a> 
  ------------------------------
 历史版本
 ---------------------------------
