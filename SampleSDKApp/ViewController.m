@@ -18,6 +18,7 @@ colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
+#define iOS6 ([[UIDevice currentDevice].systemVersion doubleValue] >= 6.0 && [[UIDevice currentDevice].systemVersion doubleValue] <= 7.0)
 @interface ViewController ()
 
 @end
@@ -30,12 +31,16 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     self.view.backgroundColor = [UIColor colorWithRed:237.0/255.0 green:237.0/255.0 blue:237.0/255.0 alpha:1];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth-280)/2, 100, 280, 40)];
+    CGFloat y = iOS6  ? 40 : 100;
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth-280)/2, y, 280, 40)];
+    label.backgroundColor = [UIColor clearColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"欢迎使用逸创云客服SDK";
     [self.view addSubview:label];
     
     UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth-280)/2, CGRectGetMaxY(label.frame), 280, 40)];
+    label1.backgroundColor = [UIColor clearColor];
     label1.textAlignment = NSTextAlignmentCenter;
     label1.text = @"以下是展示逸创云客服SDK功能的按钮";
     label1.textColor = KFColorFromRGB(0x777777);
@@ -43,7 +48,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [self.view addSubview:label1];
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button1.frame = CGRectMake((kScreenWidth-130)/2, 210, 130, 40);
+    button1.frame = CGRectMake((kScreenWidth-130)/2, y + 110, 130, 40);
     [button1 setTitle:@"帮助中心" forState:0];
     [button1 setTitleColor:[UIColor blackColor] forState:0];
     button1.layer.cornerRadius = 20;
@@ -54,7 +59,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [self.view addSubview:button1];
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button2.frame = CGRectMake((kScreenWidth-130)/2, 280, 130, 40);
+    button2.frame = CGRectMake((kScreenWidth-130)/2, y + 180, 130, 40);
     [button2 setTitle:@"反馈问题" forState:0];
     [button2 setTitleColor:[UIColor blackColor] forState:0];
     button2.layer.cornerRadius = 20;
@@ -65,7 +70,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [self.view addSubview:button2];
     
     UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button3.frame = CGRectMake((kScreenWidth-130)/2, 350, 130, 40);
+    button3.frame = CGRectMake((kScreenWidth-130)/2, y + 250, 130, 40);
     [button3 setTitle:@"查看反馈" forState:0];
     [button3 setTitleColor:[UIColor blackColor] forState:0];
     button3.layer.cornerRadius = 20;
