@@ -40,6 +40,15 @@
 - (void)setEmail:(NSString *)email andUserName:(NSString *)userName PassWord:(NSString *)password  WithFailure:(void (^)(id failure))failure;
 
 /**
+ *  初始化用户名和昵称   注：所有用户无视密码即可初始化成功（不推荐使用）
+ *
+ *  @param email    用户邮箱
+ *  @param userName 昵称
+ *  @param failure  密码错误,或网络请求错误的处理
+ */
+- (void)setEmail:(NSString *)email andUserName:(NSString *)userName WithFailure:(void (^)(id failure))failure;
+
+/**
  *  用户数据
  */
 @property (nonatomic, strong,readonly) KFUser *user;
