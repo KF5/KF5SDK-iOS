@@ -14,9 +14,9 @@
 		846B747D1A7F71A800989160 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747C1A7F71A800989160 /* AppDelegate.m */; };
 		846B74801A7F71A800989160 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747F1A7F71A800989160 /* ViewController.m */; };
 		846B74941A7F71A800989160 /* SampleSDKAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74931A7F71A800989160 /* SampleSDKAppTests.m */; };
-		84855C191B7094D2007D830C /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84855C181B7094D2007D830C /* KF5SDK.framework */; };
 		84855C1B1B7094D9007D830C /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84855C1A1B7094D9007D830C /* KF5SDK.bundle */; };
 		84855C1D1B70955D007D830C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84855C1C1B70955D007D830C /* Images.xcassets */; };
+		84855D391B70A87F007D830C /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84855D381B70A87F007D830C /* KF5SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +43,9 @@
 		846B748D1A7F71A800989160 /* SampleSDKAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleSDKAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846B74921A7F71A800989160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B74931A7F71A800989160 /* SampleSDKAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleSDKAppTests.m; sourceTree = "<group>"; };
-		84855C181B7094D2007D830C /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 		84855C1A1B7094D9007D830C /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
 		84855C1C1B70955D007D830C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84855D381B70A87F007D830C /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84855C191B7094D2007D830C /* KF5SDK.framework in Frameworks */,
+				84855D391B70A87F007D830C /* KF5SDK.framework in Frameworks */,
 				845A4A291ADB6EDD00576317 /* MapKit.framework in Frameworks */,
 				845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */,
 				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
@@ -91,7 +91,7 @@
 		846B74761A7F71A800989160 /* SampleSDKApp */ = {
 			isa = PBXGroup;
 			children = (
-				84855C181B7094D2007D830C /* KF5SDK.framework */,
+				84855D381B70A87F007D830C /* KF5SDK.framework */,
 				846B747B1A7F71A800989160 /* AppDelegate.h */,
 				846B747C1A7F71A800989160 /* AppDelegate.m */,
 				846B747E1A7F71A800989160 /* ViewController.h */,

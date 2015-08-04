@@ -65,10 +65,7 @@
     }else{
         [[UINavigationBar appearance] setTintColor:KFColor(0, 155, 239)];
     }
-    
-    
-    
-    
+
     // 注：视图均遵守UIAppearance协议，可以用appearance修改界面样式
     [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:15.f]];
     [[KFHelpCenterListView appearance]setCellTextLabelColor:[UIColor blackColor]];

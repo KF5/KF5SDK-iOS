@@ -18,7 +18,12 @@ colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-#define iOS6 ([[UIDevice currentDevice].systemVersion doubleValue] >= 6.0 && [[UIDevice currentDevice].systemVersion doubleValue] <= 7.0)
+#define kViewLandscape UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
+
+#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+#define iOS6 ([[UIDevice currentDevice].systemVersion doubleValue] >= 6.0 && [[UIDevice currentDevice].systemVersion doubleValue] < 7.0)
+
 @interface ViewController ()
 
 @end
@@ -31,56 +36,66 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     self.view.backgroundColor = [UIColor colorWithRed:237.0/255.0 green:237.0/255.0 blue:237.0/255.0 alpha:1];
     
-    CGFloat y = iOS6  ? 40 : 100;
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth-280)/2, y, 280, 40)];
-    label.backgroundColor = [UIColor clearColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"欢迎使用逸创云客服SDK";
-    [self.view addSubview:label];
-    
-    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth-280)/2, CGRectGetMaxY(label.frame), 280, 40)];
-    label1.backgroundColor = [UIColor clearColor];
-    label1.textAlignment = NSTextAlignmentCenter;
-    label1.text = @"以下是展示逸创云客服SDK功能的按钮";
-    label1.textColor = KFColorFromRGB(0x777777);
-    label1.font = [UIFont systemFontOfSize:13.0f];
+    UILabel *label1 = [self labelWithText:@"欢迎使用逸创云客服SDK"];
     [self.view addSubview:label1];
     
-    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button1.frame = CGRectMake((kScreenWidth-130)/2, y + 110, 130, 40);
-    [button1 setTitle:@"帮助中心" forState:0];
-    [button1 setTitleColor:[UIColor blackColor] forState:0];
-    button1.layer.cornerRadius = 20;
-    button1.layer.masksToBounds = YES;
-    button1.layer.borderWidth = 1.2;
-    button1.layer.borderColor = KFColorFromRGB(0x555555).CGColor;
+    UILabel *label2 = [self labelWithText:@"以下是展示逸创云客服SDK功能的按钮"];
+    label2.textColor = KFColorFromRGB(0x777777);
+    label2.font = [UIFont systemFontOfSize:13.0f];
+    [self.view addSubview:label2];
+    
+    UIButton *button1 = [self buttonWithTitle:@"帮助中心"];
     [button1 addTarget:self action:@selector(buttonAction1) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
     
-    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button2.frame = CGRectMake((kScreenWidth-130)/2, y + 180, 130, 40);
-    [button2 setTitle:@"反馈问题" forState:0];
-    [button2 setTitleColor:[UIColor blackColor] forState:0];
-    button2.layer.cornerRadius = 20;
-    button2.layer.masksToBounds = YES;
-    button2.layer.borderWidth = 1.2;
-    button2.layer.borderColor = KFColorFromRGB(0x555555).CGColor;
+    UIButton *button2 = [self buttonWithTitle:@"反馈问题"];
     [button2 addTarget:self action:@selector(buttonAction2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
     
-    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button3.frame = CGRectMake((kScreenWidth-130)/2, y + 250, 130, 40);
-    [button3 setTitle:@"查看反馈" forState:0];
-    [button3 setTitleColor:[UIColor blackColor] forState:0];
-    button3.layer.cornerRadius = 20;
-    button3.layer.masksToBounds = YES;
-    button3.layer.borderWidth = 1.2;
-    button3.layer.borderColor = KFColorFromRGB(0x555555).CGColor;
+    UIButton *button3 = [self buttonWithTitle:@"查看反馈"];
     [button3 addTarget:self action:@selector(buttonAction3) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
     
+    CGFloat orignY = iOS6 ? 60 : 100;
+    CGFloat spacing = 30;
+    if (kViewLandscape && !isPad) {
+        orignY = 20;
+        spacing = 10;
+    }
+    
+    NSDictionary *dict = NSDictionaryOfVariableBindings(label1,label2,button1,button2,button3);
+    NSDictionary *metrics = @{@"orignY":@(orignY), @"btnW":@130,@"btnH":@40,@"labelH":@40,@"spacing":@(spacing)};
+    NSString *vf1 = @"V:|-orignY-[label1(btnH)]-[label2(btnH)]-spacing-[button1(btnH)]-spacing-[button2(btnH)]-spacing-[button3(btnH)]";
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:vf1 options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[label1]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[label2]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button1(btnW)]" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button2(btnW)]" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button3(btnW)]" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+- (UILabel *)labelWithText:(NSString *)text
+{
+    UILabel *label = [[UILabel alloc]init];
+    label.backgroundColor = [UIColor clearColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = text;
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    return label;
+}
+- (UIButton *)buttonWithTitle:(NSString *)title
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:title forState:0];
+    [button setTitleColor:[UIColor blackColor] forState:0];
+    button.layer.cornerRadius = 20;
+    button.layer.masksToBounds = YES;
+    button.layer.borderWidth = 1.2;
+    button.layer.borderColor = KFColorFromRGB(0x555555).CGColor;
+    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
+    return button;
 }
 
 // 帮助中心
