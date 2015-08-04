@@ -10,7 +10,7 @@
 
 
 
-@interface KFCreateRequestView : UIView<UIAppearance>
+@interface KFCreateRequestView : UIScrollView<UIAppearance>
 
 /**
  * placeholder的颜色

@@ -41,32 +41,33 @@
 #endif
     
     // 初始化配置信息
-    [[KFConfig instance]initializeWithHostName:@"http://tianxiang.kf5.com" appId:@"001552ba3d1cc2efc711d065650f90d99eb6dded16d80a17"];
-    [[KFConfig instance]setEmail:kemail andUserName:nil PassWord:kpassword WithFailure:nil];
-    
+    [[KFConfig instance]initializeWithHostName:@"http://tianxiang.kf5.com" appId:@"00155b5f81ac5a9318cd15ca21123187c1e381d1d7e577ca"];
+    [[KFConfig instance]setEmail:kemail andUserName:nil WithFailure:^(id failure) {
+        NSLog(@"%@",failure);
+    }];
     
     // UI配置
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
+    
     NSDictionary *navbarAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
     
-
+    
     [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:18.f]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     
     if (!iOS6) {
-       [[UINavigationBar appearance]setBarTintColor:KFColor(0, 155, 239)];
+        [[UINavigationBar appearance]setBarTintColor:KFColor(0, 155, 239)];
         [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     }else{
         [[UINavigationBar appearance] setTintColor:KFColor(0, 155, 239)];
     }
     
-
-
+    
+    
     
     // 注：视图均遵守UIAppearance协议，可以用appearance修改界面样式
     [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:15.f]];

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8446EB2E1B302A0000F4E421 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8446EB2D1B302A0000F4E421 /* KF5SDK.framework */; };
-		845A4A221ADB6E9200576317 /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 845A4A211ADB6E9200576317 /* KF5SDK.bundle */; };
 		845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */; };
 		845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A261ADB6ED300576317 /* ImageIO.framework */; };
 		845A4A291ADB6EDD00576317 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A281ADB6EDD00576317 /* MapKit.framework */; };
 		846B747A1A7F71A800989160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74791A7F71A800989160 /* main.m */; };
 		846B747D1A7F71A800989160 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747C1A7F71A800989160 /* AppDelegate.m */; };
 		846B74801A7F71A800989160 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747F1A7F71A800989160 /* ViewController.m */; };
-		846B74851A7F71A800989160 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846B74841A7F71A800989160 /* Images.xcassets */; };
 		846B74941A7F71A800989160 /* SampleSDKAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74931A7F71A800989160 /* SampleSDKAppTests.m */; };
+		84855C191B7094D2007D830C /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84855C181B7094D2007D830C /* KF5SDK.framework */; };
+		84855C1B1B7094D9007D830C /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84855C1A1B7094D9007D830C /* KF5SDK.bundle */; };
+		84855C1D1B70955D007D830C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84855C1C1B70955D007D830C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8446EB2D1B302A0000F4E421 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
-		845A4A211ADB6E9200576317 /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
 		845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		845A4A261ADB6ED300576317 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		845A4A281ADB6EDD00576317 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -42,10 +40,12 @@
 		846B747C1A7F71A800989160 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		846B747E1A7F71A800989160 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		846B747F1A7F71A800989160 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		846B74841A7F71A800989160 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		846B748D1A7F71A800989160 /* SampleSDKAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleSDKAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846B74921A7F71A800989160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B74931A7F71A800989160 /* SampleSDKAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleSDKAppTests.m; sourceTree = "<group>"; };
+		84855C181B7094D2007D830C /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
+		84855C1A1B7094D9007D830C /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
+		84855C1C1B70955D007D830C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8446EB2E1B302A0000F4E421 /* KF5SDK.framework in Frameworks */,
+				84855C191B7094D2007D830C /* KF5SDK.framework in Frameworks */,
 				845A4A291ADB6EDD00576317 /* MapKit.framework in Frameworks */,
 				845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */,
 				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
@@ -91,12 +91,12 @@
 		846B74761A7F71A800989160 /* SampleSDKApp */ = {
 			isa = PBXGroup;
 			children = (
-				8446EB2D1B302A0000F4E421 /* KF5SDK.framework */,
+				84855C181B7094D2007D830C /* KF5SDK.framework */,
 				846B747B1A7F71A800989160 /* AppDelegate.h */,
 				846B747C1A7F71A800989160 /* AppDelegate.m */,
 				846B747E1A7F71A800989160 /* ViewController.h */,
 				846B747F1A7F71A800989160 /* ViewController.m */,
-				846B74841A7F71A800989160 /* Images.xcassets */,
+				84855C1C1B70955D007D830C /* Images.xcassets */,
 				846B74771A7F71A800989160 /* Supporting Files */,
 			);
 			path = SampleSDKApp;
@@ -105,10 +105,10 @@
 		846B74771A7F71A800989160 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84855C1A1B7094D9007D830C /* KF5SDK.bundle */,
 				845A4A281ADB6EDD00576317 /* MapKit.framework */,
 				845A4A261ADB6ED300576317 /* ImageIO.framework */,
 				845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */,
-				845A4A211ADB6E9200576317 /* KF5SDK.bundle */,
 				846B74781A7F71A800989160 /* Info.plist */,
 				846B74791A7F71A800989160 /* main.m */,
 			);
@@ -212,8 +212,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846B74851A7F71A800989160 /* Images.xcassets in Resources */,
-				845A4A221ADB6E9200576317 /* KF5SDK.bundle in Resources */,
+				84855C1B1B7094D9007D830C /* KF5SDK.bundle in Resources */,
+				84855C1D1B70955D007D830C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

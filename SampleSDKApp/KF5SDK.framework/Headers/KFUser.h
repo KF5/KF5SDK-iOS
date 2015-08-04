@@ -53,7 +53,7 @@
 /**
  *  jwtToken的过期时间
  */
-@property (nonatomic, strong) NSDate *expiresTime;
+@property (nonatomic, strong) NSDate *expiresTime __deprecated_msg("该变量将会被废除");
 
 /**
  *  helpCenter是否开启
