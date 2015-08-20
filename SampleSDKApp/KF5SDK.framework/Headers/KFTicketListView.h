@@ -33,6 +33,19 @@
 @property (nonatomic, strong) UIColor *cellTimeColor;
 
 /**
+ * cell statusLabel的字体
+ */
+@property (nonatomic, strong) UIFont *cellStatusFont;
+
+/**
+ * cell statusLabel的颜色
+ */
+@property (nonatomic, strong) UIColor *cellStatusColor;
+/**
+ *  是否隐藏statusLabel，默认不隐藏
+ */
+@property (nonatomic, assign) BOOL isHiddenStatusLabel;
+/**
  * tableView的背景颜色
  */
 @property (nonatomic, strong) UIColor *tableBackgroundColor;
