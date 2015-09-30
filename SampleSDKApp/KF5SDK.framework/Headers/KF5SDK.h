@@ -17,6 +17,7 @@
 #import <KF5SDK/KFRequests.h>
 #import <KF5SDK/KFDispatcher.h>
 #import <KF5SDK/KFHelpCenterConversationUIDelegate.h>
+#import <KF5SDK/KFDetailMessageTableViewCell.h>
 #import <KF5SDK/KFCreateRequestUIDelegate.h>
 #import <KF5SDK/KFCreateRequestView.h>
 #import <KF5SDK/KFRequestCommentTableCell.h>

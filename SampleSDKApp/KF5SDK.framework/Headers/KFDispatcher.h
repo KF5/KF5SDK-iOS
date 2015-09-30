@@ -20,5 +20,10 @@ typedef void (^KFAPISuccess) (id result);
  */
 typedef void (^KFAPIError) (NSError *error);
 
+/**
+ *  点击BarButton的回调
+ */
+typedef void (^KFBarButtonActionBlock)();
+
 
 @end

@@ -49,9 +49,16 @@
 - (void)setEmail:(NSString *)email andUserName:(NSString *)userName WithFailure:(void (^)(id failure))failure;
 
 /**
+ *  获取普通用户可以编辑的自定义字段
+ *
+ *  @param success 获取成功的回调
+ *  @param error 获取失败的回调
+ */
+- (void)getCustomFiledsWithSuccess:(KFAPISuccess)success failure:(KFAPIError)error;
+
+/**
  *  用户数据
  */
 @property (nonatomic, strong,readonly) KFUser *user;
-
 
 @end

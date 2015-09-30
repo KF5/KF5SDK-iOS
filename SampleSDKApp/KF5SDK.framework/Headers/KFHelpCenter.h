@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "KFHelpCenterConversationUIDelegate.h"
+#import "KFDispatcher.h"
 
 typedef  enum{
     KFHelpCenterTypeDocument, // 展示分区列表,默认
@@ -25,7 +26,17 @@ typedef  enum{
  *  @param navController  当前的navController
  *  @param helpCenterType 展示方式
  */
-+ (void)showHelpCenterWithNavController:(UINavigationController*)navController helpCenterType:(KFHelpCenterType)helpCenterType;
++ (void)showHelpCenterWithNavController:(UINavigationController*)navController
+                         helpCenterType:(KFHelpCenterType)helpCenterType;
+/**
+ *  push知识库文档控制器(带actionBlock)
+ *
+ *  @param navController  当前的navController
+ *  @param helpCenterType 展示方式
+ *  @param actionBlock    点击navBar右侧按钮的事件处理，为NULL直接跳转到工单列表
+ */
++ (void)showHelpCenterWithNavController:(UINavigationController*)navController
+                         helpCenterType:(KFHelpCenterType)helpCenterType rightBarButtonActionBlock:(KFBarButtonActionBlock)actionBlock;
 
 /**
  *  present知识库文档控制器
@@ -33,7 +44,18 @@ typedef  enum{
  *  @param navController  当前的navController
  *  @param helpCenterType 展示方式
  */
-+ (void) presentHelpCenterWithNavController:(UINavigationController*)navController helpCenterType:(KFHelpCenterType)helpCenterType;
++ (void) presentHelpCenterWithNavController:(UINavigationController*)navController
+                             helpCenterType:(KFHelpCenterType)helpCenterType;
+
+/**
+ *  present知识库文档控制器(带actionBlock)
+ *
+ *  @param navController  当前的navController
+ *  @param helpCenterType 展示方式
+ *  @param actionBlock    点击navBar右侧按钮的事件处理，为NULL直接跳转到工单列表
+ */
++ (void) presentHelpCenterWithNavController:(UINavigationController*)navController
+                             helpCenterType:(KFHelpCenterType)helpCenterType rightBarButtonActionBlock:(KFBarButtonActionBlock)actionBlock;
 
 /**
  *  设置右侧NavBarButton的image

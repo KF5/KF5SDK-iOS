@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/KF5SDK.h</key>
 		<data>
-		tg/pC+Oxvj03MV/Wy5AU0lLjFuE=
+		CehiB6dgXJHbDat20mVHGu9PSbk=
 		</data>
 		<key>Headers/KFConfig.h</key>
 		<data>
-		Z3EoVlmcNtGtks8Dwaely/+wuCU=
+		h4JjYjFmerBlBharl6dRAmfANb4=
 		</data>
 		<key>Headers/KFCreateRequestUIDelegate.h</key>
 		<data>
@@ -20,13 +20,17 @@
 		<data>
 		h0iRV1lH/xtTzp3gtJAfOnwJywY=
 		</data>
+		<key>Headers/KFDetailMessageTableViewCell.h</key>
+		<data>
+		yWl/KlwOKDG6mXrO8OSSltOYJOk=
+		</data>
 		<key>Headers/KFDispatcher.h</key>
 		<data>
-		LIawId6rYy/KQwDjTxBdUg5JQ+Y=
+		6cuJuEM4FWl3tPWjVm8ycJEI0hY=
 		</data>
 		<key>Headers/KFHelpCenter.h</key>
 		<data>
-		WEO/kR0qz+sCoWYDkAcxz+rZjXU=
+		RoSTiS6P79TiaUICCKVbaUUuVuw=
 		</data>
 		<key>Headers/KFHelpCenterConversationUIDelegate.h</key>
 		<data>
@@ -50,15 +54,15 @@
 		</data>
 		<key>Headers/KFRequestCommentTableCell.h</key>
 		<data>
-		YaZLzjQFrsMMoBVHdH0PN4hq9hE=
+		wBbMr4eUV/0DNKGAx8mfyrDA9+U=
 		</data>
 		<key>Headers/KFRequests.h</key>
 		<data>
-		bsYNWi/PtkPexRzwFWU7J+Ewdfw=
+		uqNKCtyzK22P0LAuugHG+faxaag=
 		</data>
 		<key>Headers/KFTicketListView.h</key>
 		<data>
-		6IQ9a5MnfPibcsN0yUnvKAlX2LY=
+		IRNWSQjTvehfimEhpFzLzcGt1ZQ=
 		</data>
 		<key>Headers/KFUser.h</key>
 		<data>
@@ -66,7 +70,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Ih9auTw3K7pZudMcoS+u+zOefDA=
+		UBk3exdFXwP8VdhZ1EQxEZ7vRGU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -77,11 +81,11 @@
 	<dict>
 		<key>Headers/KF5SDK.h</key>
 		<data>
-		tg/pC+Oxvj03MV/Wy5AU0lLjFuE=
+		CehiB6dgXJHbDat20mVHGu9PSbk=
 		</data>
 		<key>Headers/KFConfig.h</key>
 		<data>
-		Z3EoVlmcNtGtks8Dwaely/+wuCU=
+		h4JjYjFmerBlBharl6dRAmfANb4=
 		</data>
 		<key>Headers/KFCreateRequestUIDelegate.h</key>
 		<data>
@@ -91,13 +95,17 @@
 		<data>
 		h0iRV1lH/xtTzp3gtJAfOnwJywY=
 		</data>
+		<key>Headers/KFDetailMessageTableViewCell.h</key>
+		<data>
+		yWl/KlwOKDG6mXrO8OSSltOYJOk=
+		</data>
 		<key>Headers/KFDispatcher.h</key>
 		<data>
-		LIawId6rYy/KQwDjTxBdUg5JQ+Y=
+		6cuJuEM4FWl3tPWjVm8ycJEI0hY=
 		</data>
 		<key>Headers/KFHelpCenter.h</key>
 		<data>
-		WEO/kR0qz+sCoWYDkAcxz+rZjXU=
+		RoSTiS6P79TiaUICCKVbaUUuVuw=
 		</data>
 		<key>Headers/KFHelpCenterConversationUIDelegate.h</key>
 		<data>
@@ -121,15 +129,15 @@
 		</data>
 		<key>Headers/KFRequestCommentTableCell.h</key>
 		<data>
-		YaZLzjQFrsMMoBVHdH0PN4hq9hE=
+		wBbMr4eUV/0DNKGAx8mfyrDA9+U=
 		</data>
 		<key>Headers/KFRequests.h</key>
 		<data>
-		bsYNWi/PtkPexRzwFWU7J+Ewdfw=
+		uqNKCtyzK22P0LAuugHG+faxaag=
 		</data>
 		<key>Headers/KFTicketListView.h</key>
 		<data>
-		6IQ9a5MnfPibcsN0yUnvKAlX2LY=
+		IRNWSQjTvehfimEhpFzLzcGt1ZQ=
 		</data>
 		<key>Headers/KFUser.h</key>
 		<data>

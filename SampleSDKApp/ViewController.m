@@ -56,7 +56,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [button3 addTarget:self action:@selector(buttonAction3) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
     
-    CGFloat orignY = iOS6 ? 60 : 100;
+    CGFloat orignY = 80;
     CGFloat spacing = 30;
     if (kViewLandscape && !isPad) {
         orignY = 20;
@@ -74,6 +74,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button3(btnW)]" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
 }
 
 - (UILabel *)labelWithText:(NSString *)text
@@ -100,23 +101,44 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 // 帮助中心
 - (void)buttonAction1 {
+    
     [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument];
     
-    [KFHelpCenter setNavBarConversationsUIType:KFNavBarConversationsUITypeImage];
+    [KFHelpCenter setNavBarConversationsUIType:KFNavBarConversationsUITypeLocalizedLabel];
+    
+//    [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument rightBarButtonActionBlock:^{
+//        [self buttonAction3];
+//    }];
 }
 // 反馈问题
 - (void)buttonAction2 {
     
-    [KFRequests presentRequestCreationWithNavController:self.navigationController withSuccess:^(id result) {
-        NSLog(@"%@",result);
-    } andError:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
+    [KFRequests presentRequestCreationWithNavController:self.navigationController];
     
+//    [KFRequests presentRequestCreationWithNavController:self.navigationController fieldDict:@{@"field_3588":@"安装",@"field_4587":@"text123"} success:^(id result) {
+//        NSLog(@"------%@",result);
+//    } andError:^(NSError *error) {
+//        NSLog(@"%@",error);
+//    }];
 }
 
 // 反馈列表
 - (void)buttonAction3 {
-    [KFRequests showRequestListWithNavController:self.navigationController];
+    
+    [KFRequests presentRequestListWithNavController:self.navigationController];
+    
+    [KFRequests showRequestListWithNavController:self.navigationController rightBarButtonActionBlock:^{
+        [self buttonAction2];
+    }];
 }
+
+// 获取自定义字段
+- (void)getCustomFileds
+{
+    [[KFConfig instance] getCustomFiledsWithSuccess:^(id result) {
+        NSLog(@"result--%@",result);
+    } failure:^(NSError *error) {
+    }];
+}
+
 @end

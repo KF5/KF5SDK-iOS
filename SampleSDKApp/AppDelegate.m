@@ -41,7 +41,7 @@
 #endif
     
     // 初始化配置信息
-    [[KFConfig instance]initializeWithHostName:@"http://tianxiang.kf5.com" appId:@"00155b5f81ac5a9318cd15ca21123187c1e381d1d7e577ca"];
+    [[KFConfig instance]initializeWithHostName:@"https://tianxiang.kf5.com" appId:@"00155bee6f7945ea5aa21c6ffc35f7aa7ed0999d7c6b6029"];
     [[KFConfig instance]setEmail:kemail andUserName:nil WithFailure:^(id failure) {
         NSLog(@"%@",failure);
     }];

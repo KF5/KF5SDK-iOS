@@ -76,6 +76,6 @@
 /**
  * noResultsLabel的背景颜色
  */
-@property (nonatomic, strong) UIColor *noResultsLabelBackground;
+@property (nonatomic, strong) UIColor *noResultsLabelBackgroundColor;
 
 @end

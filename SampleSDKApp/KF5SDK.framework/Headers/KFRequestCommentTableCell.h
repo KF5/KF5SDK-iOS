@@ -79,7 +79,7 @@
 /**
  * cell的背景颜色
  */
-@property (nonatomic, strong) UIColor *cellBackground;
+@property (nonatomic, strong) UIColor *cellBackgroundColor;
 
 @end
 
