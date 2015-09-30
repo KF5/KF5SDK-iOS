@@ -125,11 +125,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 // 反馈列表
 - (void)buttonAction3 {
     
-    [KFRequests presentRequestListWithNavController:self.navigationController];
+    [KFRequests showRequestListWithNavController:self.navigationController];
     
-    [KFRequests showRequestListWithNavController:self.navigationController rightBarButtonActionBlock:^{
-        [self buttonAction2];
-    }];
+//    [KFRequests showRequestListWithNavController:self.navigationController rightBarButtonActionBlock:^{
+//        [self buttonAction2];
+//    }];
 }
 
 // 获取自定义字段

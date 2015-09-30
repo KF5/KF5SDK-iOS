@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, KFNavBarDetailMessageUIType) {
 /**
  *  present创建工单视图控制器
  *
- *  @param fieldDict     工单自定义字段字典，如@{@"field_123":@"内容"}]
+ *  @param fieldDict     工单自定义字段字典，如@{@"field_123":@"内容"}
  *  @param navController 当前的navController
  *  @param success       网络请求成功时返回
  *  @param error         网络请求失败时返回
