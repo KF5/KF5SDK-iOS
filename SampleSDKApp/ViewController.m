@@ -22,8 +22,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
-#define iOS6 ([[UIDevice currentDevice].systemVersion doubleValue] >= 6.0 && [[UIDevice currentDevice].systemVersion doubleValue] < 7.0)
-
 @interface ViewController ()
 
 @end

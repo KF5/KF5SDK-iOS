@@ -11,7 +11,6 @@
 #import <KF5SDK/KF5SDK.h>
 
 #define KFColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
-#define iOS6 ([[UIDevice currentDevice].systemVersion doubleValue] >= 6.0 && [[UIDevice currentDevice].systemVersion doubleValue] <= 7.0)
 
 #define kemail     @"iossdk123456789@kf5.com"
 #define kpassword  @"iossdk"
@@ -58,13 +57,8 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    
-    if (!iOS6) {
-        [[UINavigationBar appearance]setBarTintColor:KFColor(0, 155, 239)];
-        [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
-    }else{
-        [[UINavigationBar appearance] setTintColor:KFColor(0, 155, 239)];
-    }
+    [[UINavigationBar appearance]setBarTintColor:KFColor(0, 155, 239)];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
 
     // 注：视图均遵守UIAppearance协议，可以用appearance修改界面样式
     [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:15.f]];
