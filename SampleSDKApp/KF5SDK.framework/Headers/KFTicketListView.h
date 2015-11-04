@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KFTicketListView : UIView<UIAppearance>
+@interface KFTicketListView : UIView
 
 #pragma mark cell appearance
 
@@ -44,7 +44,7 @@
 /**
  *  是否隐藏statusLabel，默认不隐藏
  */
-@property (nonatomic, assign) BOOL isHiddenStatusLabel;
+@property (nonatomic, strong) NSNumber *isHiddenStatusLabel;
 /**
  * tableView的背景颜色
  */
@@ -69,7 +69,7 @@
 @property (nonatomic, strong) UIColor *noResultsLabelColor;
 
 /**
- * noResultsLabel的颜色
+ * noResultsLabel的内容
  */
 @property (nonatomic, strong) NSString *noResultsLabelText;
 

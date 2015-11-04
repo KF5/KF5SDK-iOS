@@ -15,8 +15,9 @@
 		846B74801A7F71A800989160 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747F1A7F71A800989160 /* ViewController.m */; };
 		846B74941A7F71A800989160 /* SampleSDKAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74931A7F71A800989160 /* SampleSDKAppTests.m */; };
 		84855C1D1B70955D007D830C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84855C1C1B70955D007D830C /* Images.xcassets */; };
-		848D81B71B85BDDA002ED96D /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 848D81B61B85BDDA002ED96D /* KF5SDK.bundle */; };
-		849F41D31BCF9B0800084D12 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849F41D21BCF9B0800084D12 /* KF5SDK.framework */; settings = {ASSET_TAGS = (); }; };
+		84DB422B1BEA0B94000811FB /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84DB422A1BEA0B94000811FB /* KF5SDK.bundle */; };
+		84DB422E1BEA0BC9000811FB /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB422D1BEA0BC9000811FB /* TableViewCell.m */; };
+		84DB42341BEA2941000811FB /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DB42331BEA2941000811FB /* KF5SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +45,10 @@
 		846B74921A7F71A800989160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B74931A7F71A800989160 /* SampleSDKAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleSDKAppTests.m; sourceTree = "<group>"; };
 		84855C1C1B70955D007D830C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		848D81B61B85BDDA002ED96D /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
-		849F41D21BCF9B0800084D12 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
+		84DB422A1BEA0B94000811FB /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
+		84DB422C1BEA0BC9000811FB /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		84DB422D1BEA0BC9000811FB /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		84DB42331BEA2941000811FB /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849F41D31BCF9B0800084D12 /* KF5SDK.framework in Frameworks */,
+				84DB42341BEA2941000811FB /* KF5SDK.framework in Frameworks */,
 				845A4A291ADB6EDD00576317 /* MapKit.framework in Frameworks */,
 				845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */,
 				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
@@ -91,11 +94,12 @@
 		846B74761A7F71A800989160 /* SampleSDKApp */ = {
 			isa = PBXGroup;
 			children = (
-				849F41D21BCF9B0800084D12 /* KF5SDK.framework */,
 				846B747B1A7F71A800989160 /* AppDelegate.h */,
 				846B747C1A7F71A800989160 /* AppDelegate.m */,
 				846B747E1A7F71A800989160 /* ViewController.h */,
 				846B747F1A7F71A800989160 /* ViewController.m */,
+				84DB422C1BEA0BC9000811FB /* TableViewCell.h */,
+				84DB422D1BEA0BC9000811FB /* TableViewCell.m */,
 				84855C1C1B70955D007D830C /* Images.xcassets */,
 				846B74771A7F71A800989160 /* Supporting Files */,
 			);
@@ -105,7 +109,8 @@
 		846B74771A7F71A800989160 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				848D81B61B85BDDA002ED96D /* KF5SDK.bundle */,
+				84DB42331BEA2941000811FB /* KF5SDK.framework */,
+				84DB422A1BEA0B94000811FB /* KF5SDK.bundle */,
 				845A4A281ADB6EDD00576317 /* MapKit.framework */,
 				845A4A261ADB6ED300576317 /* ImageIO.framework */,
 				845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */,
@@ -213,7 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84855C1D1B70955D007D830C /* Images.xcassets in Resources */,
-				848D81B71B85BDDA002ED96D /* KF5SDK.bundle in Resources */,
+				84DB422B1BEA0B94000811FB /* KF5SDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				846B74801A7F71A800989160 /* ViewController.m in Sources */,
+				84DB422E1BEA0BC9000811FB /* TableViewCell.m in Sources */,
 				846B747D1A7F71A800989160 /* AppDelegate.m in Sources */,
 				846B747A1A7F71A800989160 /* main.m in Sources */,
 			);

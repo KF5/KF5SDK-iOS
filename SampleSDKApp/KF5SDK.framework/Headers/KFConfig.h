@@ -39,6 +39,18 @@
  */
 - (void)setEmail:(NSString *)email andUserName:(NSString *)userName PassWord:(NSString *)password  WithFailure:(void (^)(id failure))failure;
 
+
+/**
+ *  初始化用户名和密码,带成功的回调
+ *
+ *  @param email    用户邮箱
+ *  @param userName 昵称
+ *  @param password 密码
+ *  @param success  初始化成功
+ *  @param failure  密码错误,或网络请求错误的处理
+ */
+- (void)setEmail:(NSString *)email andUserName:(NSString *)userName PassWord:(NSString *)password WithSuccess:(void (^)(id json))success WithFailure:(void (^)(id failure))failure;
+
 /**
  *  初始化用户名和昵称   注：所有用户无视密码即可初始化成功（不推荐使用）
  *

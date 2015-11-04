@@ -78,7 +78,7 @@
 /**
  *  上下间距
  */
-@property (nonatomic, strong) NSNumber *spacingTopButtom;
+@property (nonatomic, strong) NSNumber *spacingTopBottom;
 
 /**
  *  行间距倍数

@@ -7,22 +7,36 @@
 //
 
 #import "ViewController.h"
+#import "TableViewCell.h"
 #import <KF5SDK/KF5SDK.h>
-
-// 获取设备屏幕的物理尺寸
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
 #define KFColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-#define kViewLandscape UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
+@interface KFCellData : NSObject
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *imageName;
+
++(instancetype)cellDataWithTitle:(NSString *)title imageName:(NSString *)imageName;
+
+@end
+
+@implementation KFCellData
++ (instancetype)cellDataWithTitle:(NSString *)title imageName:(NSString *)imageName
+{
+    KFCellData *data = [[KFCellData alloc]init];
+    data.title = title;
+    data.imageName = imageName;
+    return data;
+}
+@end
 
 @interface ViewController ()
+
+@property (nonatomic, strong) NSArray *cellDataList;
 
 @end
 
@@ -32,102 +46,116 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [super viewDidLoad];
     self.title = @"逸创云客服";
     
-    self.view.backgroundColor = [UIColor colorWithRed:237.0/255.0 green:237.0/255.0 blue:237.0/255.0 alpha:1];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
+    self.tableView.tableHeaderView = headerView;
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+    [self.tableView setSeparatorColor:KFColorFromRGB(0xdddddd)];
     
-    UILabel *label1 = [self labelWithText:@"欢迎使用逸创云客服SDK"];
-    [self.view addSubview:label1];
+    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, headerView.frame.size.width, 116)];
+    topView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    topView.backgroundColor = KFColorFromRGB(0xf2f5f9);
+    [headerView addSubview:topView];
     
-    UILabel *label2 = [self labelWithText:@"以下是展示逸创云客服SDK功能的按钮"];
-    label2.textColor = KFColorFromRGB(0x777777);
-    label2.font = [UIFont systemFontOfSize:13.0f];
-    [self.view addSubview:label2];
+    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(64, 41, 200, 19)];
+    label1.font = [UIFont systemFontOfSize:14.f];
+    label1.backgroundColor = [UIColor clearColor];
+    label1.text = @"欢迎使用逸创云客服SDK";
+    label1.textColor = KFColorFromRGB(0x3e4245);
+    [topView addSubview:label1];
     
-    UIButton *button1 = [self buttonWithTitle:@"帮助中心"];
-    [button1 addTarget:self action:@selector(buttonAction1) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button1];
+    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(64, 60, 250, 19)];
+    label2.textColor = KFColorFromRGB(0x45d8d0);
+    label2.font = [UIFont systemFontOfSize:11.f];
+    label2.text = @"以下是展示逸创云客服SDK功能的按钮";
+    [topView addSubview:label2];
     
-    UIButton *button2 = [self buttonWithTitle:@"反馈问题"];
-    [button2 addTarget:self action:@selector(buttonAction2) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button2];
+    self.cellDataList = @[
+                          [KFCellData cellDataWithTitle:@"帮助中心" imageName:@"icon_document"],
+                          [KFCellData cellDataWithTitle:@"反馈问题" imageName:@"icon_request"],
+                          [KFCellData cellDataWithTitle:@"查看反馈" imageName:@"icon_ticketList"]
+                          ];
     
-    UIButton *button3 = [self buttonWithTitle:@"查看反馈"];
-    [button3 addTarget:self action:@selector(buttonAction3) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button3];
-    
-    CGFloat orignY = 80;
-    CGFloat spacing = 30;
-    if (kViewLandscape && !isPad) {
-        orignY = 20;
-        spacing = 10;
-    }
-    
-    NSDictionary *dict = NSDictionaryOfVariableBindings(label1,label2,button1,button2,button3);
-    NSDictionary *metrics = @{@"orignY":@(orignY), @"btnW":@130,@"btnH":@40,@"labelH":@40,@"spacing":@(spacing)};
-    NSString *vf1 = @"V:|-orignY-[label1(btnH)]-[label2(btnH)]-spacing-[button1(btnH)]-spacing-[button2(btnH)]-spacing-[button3(btnH)]";
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:vf1 options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[label1]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[label2]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button1(btnW)]" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button2(btnW)]" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button3(btnW)]" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:dict]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
 }
 
-- (UILabel *)labelWithText:(NSString *)text
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UILabel *label = [[UILabel alloc]init];
-    label.backgroundColor = [UIColor clearColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = text;
-    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    return label;
+    return  [[UIScreen mainScreen] bounds].size.height > 1136 ? 106 : 72;
 }
-- (UIButton *)buttonWithTitle:(NSString *)title
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:title forState:0];
-    [button setTitleColor:[UIColor blackColor] forState:0];
-    button.layer.cornerRadius = 20;
-    button.layer.masksToBounds = YES;
-    button.layer.borderWidth = 1.2;
-    button.layer.borderColor = KFColorFromRGB(0x555555).CGColor;
-    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
-    return button;
+    return self.cellDataList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellID = @"cellID";
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (cell == nil) {
+        cell = [[TableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    KFCellData *data = self.cellDataList[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:data.imageName];
+    cell.textLabel.text = data.title;
+    cell.textLabel.font = [UIFont systemFontOfSize:18.f];
+    cell.textLabel.textColor = KFColorFromRGB(0x424345);
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 0:
+            [self helpCenter];
+            break;
+        case 1:
+            [self request];
+            break;
+        case 2:
+            [self requestList];
+            break;
+        default:
+            break;
+    }
 }
 
 // 帮助中心
-- (void)buttonAction1 {
+- (void)helpCenter {
     
     [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument];
     
     [KFHelpCenter setNavBarConversationsUIType:KFNavBarConversationsUITypeLocalizedLabel];
-    
-//    [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument rightBarButtonActionBlock:^{
-//        [self buttonAction3];
-//    }];
+    /**
+     [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument rightBarButtonActionBlock:^{
+     [self buttonAction3];
+     }];
+     */
+
 }
 // 反馈问题
-- (void)buttonAction2 {
+- (void)request {
     
     [KFRequests presentRequestCreationWithNavController:self.navigationController];
-    
-//    [KFRequests presentRequestCreationWithNavController:self.navigationController fieldDict:@{@"field_3588":@"安装",@"field_4587":@"text123"} success:^(id result) {
-//        NSLog(@"------%@",result);
-//    } andError:^(NSError *error) {
-//        NSLog(@"%@",error);
-//    }];
+    /**
+     [KFRequests presentRequestCreationWithNavController:self.navigationController fieldDict:@{@"field_3588":@"安装",@"field_4587":@"text123"} success:^(id result) {
+     NSLog(@"------%@",result);
+     } andError:^(NSError *error) {
+     NSLog(@"%@",error);
+     }];
+     */
 }
 
 // 反馈列表
-- (void)buttonAction3 {
+- (void)requestList {
     
     [KFRequests showRequestListWithNavController:self.navigationController];
-    
-//    [KFRequests showRequestListWithNavController:self.navigationController rightBarButtonActionBlock:^{
-//        [self buttonAction2];
-//    }];
+    /**
+     [KFRequests showRequestListWithNavController:self.navigationController rightBarButtonActionBlock:^{
+     [self buttonAction2];
+     }];
+     */
 }
 
 // 获取自定义字段
@@ -137,6 +165,24 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         NSLog(@"result--%@",result);
     } failure:^(NSError *error) {
     }];
+}
+
+#pragma mark 用于将cell分割线补全
+-(void)viewDidLayoutSubviews {
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsMake(0, 88, 0, 30)];
+    }
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)])  {
+        [self.tableView setLayoutMargins:UIEdgeInsetsMake(0, 54, 0, 30)];
+    }
+}
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]){
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 88, 0, 30)];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsMake(0, 54, 0, 30)];
+    }
 }
 
 @end

@@ -56,7 +56,7 @@
 @property (nonatomic, strong) NSDate *expiresTime __deprecated_msg("该变量将会被废除");
 
 /**
- *  helpCenter是否开启
+ *  helpCenter是否开启,默认为YES
  */
 @property (nonatomic, assign) BOOL enable_helpCenter;
 

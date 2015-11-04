@@ -29,7 +29,7 @@
 /**
  *  内容
  */
-@property (nonatomic, strong) UITextView *ctnTextView;
+@property (nonatomic, strong) UILabel *ctnLabel;
 
 /**
  *  头像

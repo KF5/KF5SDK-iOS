@@ -10,7 +10,10 @@
 #import "ViewController.h"
 #import <KF5SDK/KF5SDK.h>
 
-#define KFColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define KFColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #define kemail     @"iossdk123456789@kf5.com"
 #define kpassword  @"iossdk"
@@ -46,19 +49,14 @@
     }];
     
     // UI配置
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance]setBarTintColor:KFColorFromRGB(0x282a2c)];
     
     NSDictionary *navbarAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
     
-    
-    [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:18.f]];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    [[UINavigationBar appearance]setBarTintColor:KFColor(0, 155, 239)];
-    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
 
     // 注：视图均遵守UIAppearance协议，可以用appearance修改界面样式
     [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:15.f]];
