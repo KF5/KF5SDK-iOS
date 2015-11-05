@@ -17,7 +17,7 @@
 		84855C1D1B70955D007D830C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84855C1C1B70955D007D830C /* Images.xcassets */; };
 		84DB422B1BEA0B94000811FB /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84DB422A1BEA0B94000811FB /* KF5SDK.bundle */; };
 		84DB422E1BEA0BC9000811FB /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB422D1BEA0BC9000811FB /* TableViewCell.m */; };
-		84DB42341BEA2941000811FB /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DB42331BEA2941000811FB /* KF5SDK.framework */; };
+		84F7D0B81BEB024900B941B3 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F7D0B71BEB024900B941B3 /* KF5SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		84DB422A1BEA0B94000811FB /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
 		84DB422C1BEA0BC9000811FB /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		84DB422D1BEA0BC9000811FB /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		84DB42331BEA2941000811FB /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
+		84F7D0B71BEB024900B941B3 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84DB42341BEA2941000811FB /* KF5SDK.framework in Frameworks */,
+				84F7D0B81BEB024900B941B3 /* KF5SDK.framework in Frameworks */,
 				845A4A291ADB6EDD00576317 /* MapKit.framework in Frameworks */,
 				845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */,
 				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
@@ -109,7 +109,7 @@
 		846B74771A7F71A800989160 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84DB42331BEA2941000811FB /* KF5SDK.framework */,
+				84F7D0B71BEB024900B941B3 /* KF5SDK.framework */,
 				84DB422A1BEA0B94000811FB /* KF5SDK.bundle */,
 				845A4A281ADB6EDD00576317 /* MapKit.framework */,
 				845A4A261ADB6ED300576317 /* ImageIO.framework */,
