@@ -72,7 +72,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     self.cellDataList = @[
                           [KFCellData cellDataWithTitle:@"帮助中心" imageName:@"icon_document"],
                           [KFCellData cellDataWithTitle:@"反馈问题" imageName:@"icon_request"],
-                          [KFCellData cellDataWithTitle:@"查看反馈" imageName:@"icon_ticketList"]
+                          [KFCellData cellDataWithTitle:@"查看反馈" imageName:@"icon_ticketList"],
+                          [KFCellData cellDataWithTitle:@"即时交谈" imageName:@"icon_chat"]
                           ];
     
     
@@ -116,6 +117,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         case 2:
             [self requestList];
             break;
+        case 3:
+            [self chat];
         default:
             break;
     }
@@ -124,9 +127,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 // 帮助中心
 - (void)helpCenter {
     
-    [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument];
+    [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeForum];
     
-    [KFHelpCenter setNavBarConversationsUIType:KFNavBarConversationsUITypeLocalizedLabel];
+    [KFHelpCenter setNavBarConversationsUIType:KFNavBarUITypeLocalizedLabel];
     /**
      [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument rightBarButtonActionBlock:^{
      [self buttonAction3];
@@ -158,13 +161,19 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
      */
 }
 
+- (void)chat
+{
+    KFChatViewController *chat = [[KFChatViewController alloc]init];
+    [self.navigationController pushViewController:chat animated:YES];
+}
+
 // 获取自定义字段
 - (void)getCustomFileds
 {
-    [[KFConfig instance] getCustomFiledsWithSuccess:^(id result) {
-        NSLog(@"result--%@",result);
-    } failure:^(NSError *error) {
-    }];
+//    [[KFConfig instance] getCustomFiledsWithSuccess:^(id result) {
+//        NSLog(@"result--%@",result);
+//    } failure:^(NSError *error) {
+//    }];
 }
 
 #pragma mark 用于将cell分割线补全

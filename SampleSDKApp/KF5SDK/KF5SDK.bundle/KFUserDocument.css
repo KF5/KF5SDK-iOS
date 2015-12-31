@@ -1,0 +1,55 @@
+article
+{
+    word-break:break-all;font-family: "SimHei";
+    margin:15.000000px;
+}
+
+article .title
+{
+    margin-top: 30.000000px;
+    margin-bottom: 25px;
+    font-size: 24.000000px;
+    color: #333;
+    font-family: "";
+    font-weight: 600;
+}
+
+article .content
+{
+    font-size: 16.000000px;
+    color: #444;
+    font-family: "";
+    line-height: 1.500000em;
+}
+article .content p
+{
+    margin-bottom: 10px;
+    font-size: 17px
+}
+article .content h2
+{
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+article .datetime
+{
+    margin-top: 30px;
+    font-size: 14.000000px;
+    color: #a0a0a0;
+    font-family: "";
+    clear: both
+}
+a
+{
+    font-size:16.000000px;
+    color:#019bfd;
+    font-family:"";
+}
+img
+{
+    display: inline-block;
+    max-width: 100% !important;
+    height: auto !important;
+}

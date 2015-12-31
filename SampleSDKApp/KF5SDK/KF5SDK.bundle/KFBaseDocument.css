@@ -1,0 +1,19 @@
+body, header, footer,figure, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, hr, pre, form, fieldset, input, textarea, p, blockquote, th, td { padding: 0; margin: 0; }
+body{font-family: " Open Sans","PingFangSC-Light",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;}
+i,b{ font-style:normal; font-weight:normal}
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset, img { border:none; }
+legend { display:none }
+address, caption, cite, code, dfn, th, var, i { font-weight: normal; font-style: normal; }
+ol, ul { list-style: none; }
+caption, th { text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 100%; }
+q:before, q:after { content:"" }
+a { text-decoration:none; color:#333}
+abbr, acronym { border: 0; }
+.less12px { -webkit-text-size-adjust:none; }/*chrome私有属性，允许font-size<12px*/
+.clearfix:after { content: "."; display: block; height:0; clear:both; visibility:hidden; }
+.clearfix { display:inline-block }
+* html .clearfix { height: 1%; }
+.clearfix { display:block }
+a:hover{text-decoration:none}

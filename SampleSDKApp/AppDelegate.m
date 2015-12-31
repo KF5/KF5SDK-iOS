@@ -43,9 +43,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #endif
     
     // 初始化配置信息
-    [[KFConfig instance]initializeWithHostName:@"https://tianxiang.kf5.com" appId:@"00155bee6f7945ea5aa21c6ffc35f7aa7ed0999d7c6b6029"];
-    [[KFConfig instance]setEmail:kemail andUserName:nil WithFailure:^(id failure) {
-        NSLog(@"%@",failure);
+    KFUser *user = [[KFUser alloc]initWithHostName:@"https://tianxiang.kf5.com" appId:@"00155bee6f7945ea5aa21c6ffc35f7aa7ed0999d7c6b6029" email:@"iossdk@kf5.com" appName:@"IOSAPP"];
+    [[KFConfig shareConfig]initializeWithUser:user successBlock:^(KFUser *user) {
+        
+    } failureBlock:^(KFError *error) {
+        
     }];
     
     // UI配置
@@ -61,7 +63,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     // 注：视图均遵守UIAppearance协议，可以用appearance修改界面样式
     [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:15.f]];
     [[KFHelpCenterListView appearance]setCellTextLabelColor:[UIColor blackColor]];
-    [[KFPostView appearance]setLineHeight:@(1.5)];
     
     return YES;
 }
