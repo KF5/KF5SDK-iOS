@@ -10,4 +10,7 @@
 
 @interface KFMessageImageViewCell : KFBaseMessageViewCell
 
+@property (nonatomic, weak) UIButton *messageImageBtn;
+
+
 @end

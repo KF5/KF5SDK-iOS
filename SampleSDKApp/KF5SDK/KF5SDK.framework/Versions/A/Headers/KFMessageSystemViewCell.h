@@ -8,8 +8,7 @@
 
 #import "KFBaseMessageViewCell.h"
 
-@interface KFMessageSystemViewCell : KFBaseMessageViewCell
-
+@interface KFMessageSystemViewCell : KFBaseMessageViewCell<UIAppearance>
 /**
  *  systemLabel背景
  */
@@ -22,5 +21,19 @@
  *  systemContent
  */
 @property (nonatomic, copy) NSString *systemContent;
+
+#pragma mark - UIAppearance
+/**
+ *  systemLabel背景颜色
+ */
+@property (nonatomic, strong) UIColor *systemBackgroundColor;
+/**
+ *  systemLabel文字颜色
+ */
+@property (nonatomic, strong) UIColor *systemLabelTextColor;
+/**
+ *  systemLabel字体大小
+ */
+@property (nonatomic, strong) UIFont *systemLabelFont;
 
 @end

@@ -17,7 +17,7 @@
 
 @class KFChatManager;
 
-@protocol KFChatManagerDeleagte <NSObject>
+@protocol KFChatManagerDelegate <NSObject>
 
 @optional
 /**
@@ -53,8 +53,18 @@
 @end
 
 @interface KFChatManager : NSObject
-
-@property (nonatomic, weak) id<KFChatManagerDeleagte> deleagte;
+/**
+ *  添加代理
+ */
+- (void)addDelegate:(id<KFChatManagerDelegate>)delegate;
+/**
+ *  删除代理
+ */
+- (void)removeDelegate:(id<KFChatManagerDelegate>)delegate;
+/**
+ *  删除所有代理
+ */
+- (void)removeAllDelegates;
 /**
  *  请求超时时间,默认15秒
  */
@@ -94,6 +104,7 @@
  *  上线
  */
 - (void)connectWithUser:(KFUser *)user completion:(KFChatCompletion)completion;
+
 /**
  *  设置用户离线,KF5服务器回向推送url发送推送
  */

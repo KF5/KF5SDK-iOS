@@ -29,9 +29,5 @@
  */
 @property (nonatomic, strong) KFMessage *chatMessage;
 
-/**
- *  文本颜色
- */
-- (UIColor *)messageTextColor;
 
 @end
