@@ -52,3 +52,5 @@
 #import "KFChatManager.h"
 #import "KFAgent.h"
 #import "KFMessage.h"
+#import "interf_dec.h"
+#import "interf_enc.h"

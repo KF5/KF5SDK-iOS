@@ -26,7 +26,7 @@
  */
 + (instancetype)shareConfig;
 /**
- *  初始化信息(block用于检测信息填写是否正确)
+ *  初始化信息(block用于检测信息填写是否正确,SDK不会将用户信息保存到本地,所以在使用SDK前,必须先调用此方法)
  *
  *  @param user         需要初始化的信息
  *  @param successBlock 成功的回调

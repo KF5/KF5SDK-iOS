@@ -82,8 +82,13 @@
  *  socket是否连接成功
  */
 @property (nonatomic, assign) BOOL isContentSuccess;
+/**
+ *  用户自定义信息,需要在连接服务器之前定义(格式@[@{@"name":@"性别",@"value":@"男"},@{@"name":@"爱好",@"value":@"篮球"}])
+ */
+@property (nonatomic, strong) NSArray *customFields;
 
 + (instancetype)sharedChatManager;
+
 /**
  *  发送消息
  *
@@ -106,7 +111,7 @@
 - (void)connectWithUser:(KFUser *)user completion:(KFChatCompletion)completion;
 
 /**
- *  设置用户离线,KF5服务器回向推送url发送推送
+ *  设置用户离线,KF5服务器回向推送url发送推送,建议在应用进入后台时调用
  */
 - (void)setUserOffline;
 
@@ -131,7 +136,6 @@
  *  @param completion 成功或失败的回调
  */
 - (void)syncMessageWithCompletion:(KFChatGetHistoryCompletion)completion;
-
 /**
  *  开始录制音频
  */

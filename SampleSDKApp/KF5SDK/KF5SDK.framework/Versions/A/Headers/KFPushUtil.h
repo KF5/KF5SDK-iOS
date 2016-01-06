@@ -12,21 +12,21 @@
 @interface KFPushUtil : NSObject
 
 /**
- *  发送设备的deviceToken,只有当用户被创建时,上传deviceToken才能成功
+ *  发送设备的deviceToken(只有当用户存在时,上传deviceToken才能成功)
  *  deviceToken   设备的deviceToken
  *  success       成功时回调函数
  *  error         失败时回调函数
  */
-+ (void)enablePush:(NSData *)deviceToken withSuccess:(KFAPISuccess)success
++ (void)enablePush:(NSString *)deviceToken withSuccess:(KFAPISuccess)success
           andError:(KFAPIError)error;
 
 /**
- *  删除设备的deviceToken,只有当用户被创建时,删除deviceToken才能成功
+ *  删除设备的deviceToken(只有当用户存在时,删除deviceToken才能成功)
  *  deviceToken   设备的deviceToken
  *  success       成功时回调函数
  *  error         失败时回调函数
  */
-+ (void)disablePush:(NSData *)deviceToken withSuccess:(KFAPISuccess)success
++ (void)disablePush:(NSString *)deviceToken withSuccess:(KFAPISuccess)success
            andError:(KFAPIError)error;
 
 @end

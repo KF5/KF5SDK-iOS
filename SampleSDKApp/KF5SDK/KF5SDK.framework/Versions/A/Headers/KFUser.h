@@ -9,9 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface KFUser : NSObject
-
-- (instancetype)initWithHostName:(NSString *)hostName appId:(NSString *)appId email:(NSString *)email appName:(NSString *)appName;
-
+/**
+ *  快速初始化
+ *
+ *  @param hostName    云客服域名,必填
+ *  @param appId       公司密钥,必填
+ *  @param email       用户邮箱,必填
+ *  @param appName     应用名称,选填
+ *  @param deviceToken 用户推送token,选填,填写后,不需要主动调用enablePush上传deviceToken
+ */
+- (instancetype)initWithHostName:(NSString *)hostName appId:(NSString *)appId email:(NSString *)email appName:(NSString *)appName deviceToken:(NSString *)deviceToken;
 /**
  *  用户的ID
  */
@@ -26,6 +33,10 @@
  *  用户昵称
  */
 @property (nonatomic, copy) NSString *userName;
+/**
+ *  用户推送token
+ */
+@property (nonatomic, copy) NSString *deviceToken;
 
 /**
  *  公司秘钥
