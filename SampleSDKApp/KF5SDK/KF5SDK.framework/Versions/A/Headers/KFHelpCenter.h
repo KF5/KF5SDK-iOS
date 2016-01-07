@@ -29,7 +29,7 @@
 /**
  *  第一个控制器是否使用present的方式展现
  */
-@property (nonatomic, assign) BOOL isPresent;
+@property (nonatomic, assign) BOOL isPresent __deprecated_msg("该变量将会被废除");
 /**
  *  第一个控制器的title
  */

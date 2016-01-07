@@ -82,6 +82,11 @@ typedef void  (^KFAPIUploadProgress)(NSProgress * progress);
  */
 typedef void (^KFBarButtonActionBlock)();
 
+/**
+ *  alert点击确定的回调
+ */
+typedef void (^KFAlertActionBlock)();
+
 
 typedef void (^KFChatMessageCompletion)(KFError *error,KFMessage *message);
 

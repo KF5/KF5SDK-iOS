@@ -14,8 +14,8 @@
 		846B74801A7F71A800989160 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747F1A7F71A800989160 /* ViewController.m */; };
 		846B74941A7F71A800989160 /* SampleSDKAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74931A7F71A800989160 /* SampleSDKAppTests.m */; };
 		84855C1D1B70955D007D830C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84855C1C1B70955D007D830C /* Images.xcassets */; };
-		8489AC031C3D2973008578A3 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8489AC021C3D2973008578A3 /* KF5SDK.framework */; };
-		84C495711C355ABA00E03830 /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84C4956E1C355ABA00E03830 /* KF5SDK.bundle */; };
+		84B1E8D71C3E7695004EAA68 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B1E8D61C3E7695004EAA68 /* KF5SDK.framework */; };
+		84B1E8D91C3E76BE004EAA68 /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B1E8D81C3E76BE004EAA68 /* KF5SDK.bundle */; };
 		84C495731C355ABA00E03830 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C495701C355ABA00E03830 /* libopencore-amrnb.a */; };
 		84C495791C355D0000E03830 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C495781C355D0000E03830 /* libsqlite3.tbd */; };
 		84C4957B1C355D2400E03830 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C4957A1C355D2400E03830 /* AudioToolbox.framework */; };
@@ -52,8 +52,8 @@
 		846B74921A7F71A800989160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B74931A7F71A800989160 /* SampleSDKAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleSDKAppTests.m; sourceTree = "<group>"; };
 		84855C1C1B70955D007D830C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8489AC021C3D2973008578A3 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
-		84C4956E1C355ABA00E03830 /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
+		84B1E8D61C3E7695004EAA68 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
+		84B1E8D81C3E76BE004EAA68 /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
 		84C495701C355ABA00E03830 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
 		84C495781C355D0000E03830 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		84C4957A1C355D2400E03830 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8489AC031C3D2973008578A3 /* KF5SDK.framework in Frameworks */,
+				84B1E8D71C3E7695004EAA68 /* KF5SDK.framework in Frameworks */,
 				84C4958B1C355E8100E03830 /* JavaScriptCore.framework in Frameworks */,
 				84C495891C355DF500E03830 /* CoreTelephony.framework in Frameworks */,
 				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
@@ -174,8 +174,8 @@
 		84C4956D1C355ABA00E03830 /* KF5SDK */ = {
 			isa = PBXGroup;
 			children = (
-				8489AC021C3D2973008578A3 /* KF5SDK.framework */,
-				84C4956E1C355ABA00E03830 /* KF5SDK.bundle */,
+				84B1E8D81C3E76BE004EAA68 /* KF5SDK.bundle */,
+				84B1E8D61C3E7695004EAA68 /* KF5SDK.framework */,
 				84C495701C355ABA00E03830 /* libopencore-amrnb.a */,
 			);
 			path = KF5SDK;
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84855C1D1B70955D007D830C /* Images.xcassets in Resources */,
-				84C495711C355ABA00E03830 /* KF5SDK.bundle in Resources */,
+				84B1E8D91C3E76BE004EAA68 /* KF5SDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

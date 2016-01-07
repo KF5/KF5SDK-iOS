@@ -14,7 +14,7 @@
 /**
  *  工单列表的显示方式
  */
-@property (nonatomic, assign) BOOL isPresentForTicketList;
+@property (nonatomic, assign) BOOL isPresentForTicketList __deprecated_msg("该变量将会被废除");
 
 /**
  *  工单列表控制器rightBarButtonItem的显示方式
@@ -46,6 +46,10 @@
  *  是否在工单内容视图的rightNavBar显示详细信息按钮，默认显示
  */
 @property (nonatomic, assign) BOOL isShowDetailMessage;
+/**
+ *  工单自定义字段字典，如@{@"field_123":@"内容"}],如果不为空,则在每次调用创建工单视图控制器时,都会自动加上
+ */
+@property (nonatomic, strong) NSDictionary *fieldDict;
 
 /**
  *  初始化方法

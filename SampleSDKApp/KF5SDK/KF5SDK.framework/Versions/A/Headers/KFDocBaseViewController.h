@@ -43,7 +43,7 @@
  */
 @property (nonatomic, copy) NSString *pre_page;
 /**
- *  nav右侧按钮的事件block
+ *  点击navBar右侧按钮的事件处理,默认跳转到工单列表
  */
 @property (nonatomic, copy) KFBarButtonActionBlock actionBlock;
 
