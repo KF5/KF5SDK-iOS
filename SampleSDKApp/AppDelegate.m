@@ -40,6 +40,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [KFLogger enable:NO];
 #endif
     
+    NSLog(@"当前版本%@",[KFConfig version]);
+    
     // 初始化配置信息,如果在此处填写了deviceToken,则无需主动调用KFPushUtil里的上传deviceToken的接口
     KFUser *user = [[KFUser alloc]initWithHostName:@"https://tianxiang.kf5.com" appId:@"00155bee6f7945ea5aa21c6ffc35f7aa7ed0999d7c6b6029" email:@"iossdk@kf5.com" appName:@"IOSAPP" deviceToken:nil];
     [[KFConfig shareConfig]initializeWithUser:user successBlock:^(KFUser *user) {
