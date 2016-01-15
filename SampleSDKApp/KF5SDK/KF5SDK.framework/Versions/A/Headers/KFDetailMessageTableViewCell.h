@@ -6,9 +6,9 @@
 //  Copyright © 2015年 admin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "KF5BaseTableViewCell.h"
 
-@interface KFDetailMessageTableViewCell : UITableViewCell<UIAppearance>
+@interface KFDetailMessageTableViewCell : KF5BaseTableViewCell<UIAppearance>
 /**
  *  标题
  */

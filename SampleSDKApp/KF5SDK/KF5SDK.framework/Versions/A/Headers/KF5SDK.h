@@ -11,6 +11,7 @@
 
 #import "KF5BaseTableViewController.h"
 #import "KF5BaseViewController.h"
+#import "KF5BaseTableViewCell.h"
 #import "KFBaseHttpTool.h"
 #import "KFDocHttpTool.h"
 #import "KFTicketHttpTool.h"

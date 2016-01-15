@@ -6,11 +6,11 @@
 //  Copyright © 2015年 kf5. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "KF5BaseTableViewCell.h"
 
 @class KFMessage;
 
-@interface KFBaseMessageViewCell : UITableViewCell
+@interface KFBaseMessageViewCell : KF5BaseTableViewCell
 /**
  *  头像
  */

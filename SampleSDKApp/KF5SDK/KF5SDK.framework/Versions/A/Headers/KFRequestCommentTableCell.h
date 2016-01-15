@@ -5,11 +5,9 @@
 //  Created by admin on 15/1/29.
 //  Copyright (c) 2015年 Hydom. All rights reserved.
 //
+#import "KF5BaseTableViewCell.h"
 
-#import <UIKit/UIKit.h>
-
-
-@interface KFRequestCommentTableCell : UITableViewCell
+@interface KFRequestCommentTableCell : KF5BaseTableViewCell
 
 /**
  *  头像
