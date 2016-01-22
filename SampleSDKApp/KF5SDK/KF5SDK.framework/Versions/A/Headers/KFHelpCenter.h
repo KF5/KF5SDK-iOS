@@ -10,6 +10,7 @@
 
 #import "KFDispatcher.h"
 
+#import "KFDocBaseViewController.h"
 
 @interface KFHelpCenter : NSObject
 
@@ -41,7 +42,7 @@
  *  @param navController  当前的navController
  *  @param helpCenterType 展示方式
  */
-+ (void)showHelpCenterWithNavController:(UINavigationController*)navController
++ (KFDocBaseViewController *)showHelpCenterWithNavController:(UINavigationController*)navController
                          helpCenterType:(KFHelpCenterType)helpCenterType;
 /**
  *  push知识库文档控制器(带actionBlock)
@@ -50,7 +51,7 @@
  *  @param helpCenterType 展示方式
  *  @param actionBlock    点击navBar右侧按钮的事件处理，为NULL直接跳转到工单列表
  */
-+ (void)showHelpCenterWithNavController:(UINavigationController*)navController
++ (KFDocBaseViewController *)showHelpCenterWithNavController:(UINavigationController*)navController
                          helpCenterType:(KFHelpCenterType)helpCenterType rightBarButtonActionBlock:(KFBarButtonActionBlock)actionBlock;
 
 /**
@@ -59,7 +60,7 @@
  *  @param navController  当前的navController
  *  @param helpCenterType 展示方式
  */
-+ (void) presentHelpCenterWithNavController:(UINavigationController*)navController
++ (KFDocBaseViewController *) presentHelpCenterWithNavController:(UINavigationController*)navController
                              helpCenterType:(KFHelpCenterType)helpCenterType;
 
 /**
@@ -69,7 +70,7 @@
  *  @param helpCenterType 展示方式
  *  @param actionBlock    点击navBar右侧按钮的事件处理，为NULL直接跳转到工单列表
  */
-+ (void) presentHelpCenterWithNavController:(UINavigationController*)navController
++ (KFDocBaseViewController *) presentHelpCenterWithNavController:(UINavigationController*)navController
                              helpCenterType:(KFHelpCenterType)helpCenterType rightBarButtonActionBlock:(KFBarButtonActionBlock)actionBlock;
 
 
@@ -98,6 +99,6 @@
  *
  *  @param title 标题
  */
-+ (void) setFirstNavigationItemTitle:(NSString *)title;
++ (void) setFirstNavigationItemTitle:(NSString *)title __deprecated_msg("该方法将会被废除");
 
 @end

@@ -141,6 +141,10 @@
  */
 -(void)startVoiceRecord;
 /**
+ *  取消录制音频
+ */
+- (void)cancleVoiveRecord;
+/**
  *  停止录制音频
  */
 -(void)stopVoiceRecord;
