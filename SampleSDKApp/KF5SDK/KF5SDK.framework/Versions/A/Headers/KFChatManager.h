@@ -25,6 +25,7 @@
  *
  *  @param chatManager  聊天管理对象
  *  @param chatMessages 聊天消息数组
+ *
  */
 - (void)chatManager:(KFChatManager *)chatManager receiveMessages:(NSArray *)chatMessages;
 /**
@@ -86,7 +87,9 @@
  *  用户自定义信息,需要在连接服务器之前定义(格式@[@{@"name":@"性别",@"value":@"男"},@{@"name":@"爱好",@"value":@"篮球"}])
  */
 @property (nonatomic, strong) NSArray *customFields;
-
+/**
+ *  单例
+ */
 + (instancetype)sharedChatManager;
 
 /**

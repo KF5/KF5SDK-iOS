@@ -48,9 +48,13 @@
  */
 @property (nonatomic, assign) BOOL isShowDetailMessage;
 /**
- *  工单自定义字段字典，如@{@"field_123":@"内容"}],如果不为空,则在每次调用创建工单视图控制器时,都会自动加上
+ *  工单自定义字段字典，如@{@"field_123":@"内容"}],如果不为空,则在每次调用创建工单视图控制器时,都会自动加上,
  */
 @property (nonatomic, strong) NSDictionary *fieldDict;
+/**
+ *  当创建工单控制器视图出现时,是否直接显示键盘,默认为NO
+ */
+@property (nonatomic, assign) BOOL isShowKeyBoardWhenRequestViewAppear;
 
 /**
  *  初始化方法

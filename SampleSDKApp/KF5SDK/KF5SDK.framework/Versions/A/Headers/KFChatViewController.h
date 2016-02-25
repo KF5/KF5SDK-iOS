@@ -20,9 +20,11 @@
  */
 @property (nonatomic, assign) BOOL isHideRightButton;
 /**
- *  当退出KFChatViewController时是否断开连接,默认为NO
+ *  当退出KFChatViewController时是否断开连接,默认为YES
+ *
+ *  如果设置为NO,则需要在合适的位置调用[[KFChatManager sharedChatManager] setUserOffline]方法关闭与服务器的连接
  */
-@property (nonatomic, assign) BOOL isDisconnectWhenDelloc;
+@property (nonatomic, assign) BOOL isDisConnectWhenDelloc;
 
 /**
  *  当没有客服在线时,弹出alertView显示的title,默认为"当前没有客服在线,请提交留言"
