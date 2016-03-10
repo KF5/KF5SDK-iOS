@@ -31,6 +31,8 @@
  *  @param user         需要初始化的信息
  *  @param successBlock 成功的回调
  *  @param failureBlock 失败的回调
+ *
+ *  当系统已经存在一个用户时,会先注销原来的用户,在初始化新的用户
  */
 - (void)initializeWithUser:(KFUser *)user successBlock:(KFInitSuccess)successBlock failureBlock:(KFAPIError)failureBlock;
 /**
@@ -45,6 +47,12 @@
  *
  *  @return 版本号
  */
-+ (NSString *)version;
+- (NSString *)version;
+/**
+ *  注销用户
+ *
+ *  会删除该用户的deviceToken,清除初始化的用户信息,再次访问KF5接口,需重新初始化
+ */
+- (void)logoutOfUser;
 
 @end

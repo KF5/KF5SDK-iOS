@@ -34,6 +34,16 @@
  *  当没有客服在线弹出alertView,点击"确定"按钮的事件处理,默认跳转到反馈工单界面
  */
 @property (nonatomic, copy) KFAlertActionBlock noAgentAlertActionBlock;
+/**
+ *  当客服请求进行满意度评价时的提示文字,默认:"感谢使用我们的服务,请为此次服务评价:"
+ */
+@property (nonatomic, copy) NSString *ratingAlertTitle;
+/**
+ *  当用户点击评价后的系统提示文字,默认:"感谢您的评价!"
+ *
+ *  注:该系统提示不保存到数据库
+ */
+@property (nonatomic, copy) NSString *ratingFinishSystemTitle;
 
 #pragma mark nav导航栏文字设置
 

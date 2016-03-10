@@ -36,6 +36,12 @@
  */
 - (void)chatManager:(KFChatManager *)chatManager transferAgent:(KFAgent *)agent;
 /**
+ *  客服发起满意度评价
+ *
+ *  @param chatManager 聊天管理对象
+ */
+- (void)chatManagerRating:(KFChatManager *)chatManager;
+/**
  *  录音振幅变化
  *
  *  @param chatManager 聊天管理对象
@@ -124,6 +130,12 @@
  *  @param completion 成功或失败的回调
  */
 - (void)getAgentWithCompletion:(KFChatGetAgentCompletion)completion;
+/**
+ *  发送满意度
+ *
+ *  @param completion 成功或失败的回调
+ */
+- (void)sendRating:(BOOL)rating completion:(KFChatCompletion)completion;
 
 /**
  *  获取历史记录
