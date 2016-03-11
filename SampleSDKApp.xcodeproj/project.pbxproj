@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8421E7F11C92C709002FC342 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8421E7F01C92C709002FC342 /* KF5SDK.framework */; };
 		845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */; };
 		845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A261ADB6ED300576317 /* ImageIO.framework */; };
 		846B747A1A7F71A800989160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74791A7F71A800989160 /* main.m */; };
@@ -23,7 +24,6 @@
 		84C495851C355D7600E03830 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C495841C355D7600E03830 /* MobileCoreServices.framework */; };
 		84C495891C355DF500E03830 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C495881C355DF500E03830 /* CoreTelephony.framework */; };
 		84C4958B1C355E8100E03830 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C4958A1C355E8100E03830 /* JavaScriptCore.framework */; };
-		84D235F71C9183C500C6368A /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D235F61C9183C500C6368A /* KF5SDK.framework */; };
 		84DB422E1BEA0BC9000811FB /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB422D1BEA0BC9000811FB /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8421E7F01C92C709002FC342 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 		845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		845A4A261ADB6ED300576317 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		845A4A281ADB6EDD00576317 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -64,7 +65,6 @@
 		84C495861C355D7E00E03830 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		84C495881C355DF500E03830 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84C4958A1C355E8100E03830 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		84D235F61C9183C500C6368A /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 		84DB422C1BEA0BC9000811FB /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		84DB422D1BEA0BC9000811FB /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D235F71C9183C500C6368A /* KF5SDK.framework in Frameworks */,
+				8421E7F11C92C709002FC342 /* KF5SDK.framework in Frameworks */,
 				84C4958B1C355E8100E03830 /* JavaScriptCore.framework in Frameworks */,
 				84C495891C355DF500E03830 /* CoreTelephony.framework in Frameworks */,
 				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
@@ -174,7 +174,7 @@
 		84C4956D1C355ABA00E03830 /* KF5SDK */ = {
 			isa = PBXGroup;
 			children = (
-				84D235F61C9183C500C6368A /* KF5SDK.framework */,
+				8421E7F01C92C709002FC342 /* KF5SDK.framework */,
 				84B1E8D81C3E76BE004EAA68 /* KF5SDK.bundle */,
 				84C495701C355ABA00E03830 /* libopencore-amrnb.a */,
 			);
