@@ -53,10 +53,11 @@
 #import "KFRequestCommentTableCell.h"       //工单内容相关UI
 #import "KFCreateRequestView.h"             //创建工单相关UI
 
-#import "KFBaseMessageViewCell.h"
-#import "KFMessageImageViewCell.h"
-#import "KFMessageSystemViewCell.h"
+#import "KFBaseChatMessageViewCell.h"
+#import "KFBaseSystemMessageViewCell.h"
+#import "KFBaseContentMessageViewCell.h"
 #import "KFMessageTextViewCell.h"
+#import "KFMessageImageViewCell.h"
 #import "KFMessageVoiceViewCell.h"
 
 #import "KFHelpCenter.h"                    //帮助中心管理,即文档管理

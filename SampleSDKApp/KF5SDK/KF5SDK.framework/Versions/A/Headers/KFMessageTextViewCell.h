@@ -6,28 +6,35 @@
 //
 //
 
-#import "KFBaseMessageViewCell.h"
+#import "KFBaseContentMessageViewCell.h"
 
-@interface KFMessageTextViewCell : KFBaseMessageViewCell<UIAppearance>
+@interface KFMessageTextViewCell : KFBaseContentMessageViewCell<UIAppearance>
 
 #pragma mark - UIAppearance
+/**
+ *  Label的字体
+ */
+@property (nonatomic, strong) UIFont *messageForLabelFont;
+
 
 /**
  *  普通用户消息Label的颜色
  */
 @property (nonatomic, strong) UIColor *messageForMeLabelColor;
 /**
- *  普通用户消息Label的字体
+ *  普通用户消息Label中链接的颜色
  */
-@property (nonatomic, strong) UIFont *messageForMeLabelFont;
+@property (nonatomic, strong) UIColor *messageForMeLabelUrlColor;
 
 /**
  *  客服消息Label的颜色
  */
 @property (nonatomic, strong) UIColor *messageForOtherLabelColor;
 /**
- *  客服消息Label的字体
+ *  客服消息Label中链接的颜色
  */
-@property (nonatomic, strong) UIFont *messageForOtherLabelFont;
+@property (nonatomic, strong) UIColor *messageForOtherLabelUrlColor;
+
+
 
 @end

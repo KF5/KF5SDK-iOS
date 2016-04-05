@@ -25,7 +25,12 @@
  *  如果设置为NO,则需要在合适的位置调用[[KFChatManager sharedChatManager] setUserOffline]方法关闭与服务器的连接
  */
 @property (nonatomic, assign) BOOL isDisConnectWhenDelloc;
-
+/**
+ *  当没有客服在线时是否弹出alertView,默认为YES
+ *
+ *  注:当设置为NO时,noAgentAlertShowTitle和noAgentAlertActionBlock将失效
+ */
+@property (nonatomic, assign) BOOL isShowAlertWhenNoAgent;
 /**
  *  当没有客服在线时,弹出alertView显示的title,默认为"当前没有客服在线,请提交留言"
  */
@@ -64,7 +69,7 @@
  */
 @property (nonatomic, copy) NSString *noAgentShowTitle;
 /**
- *  当客服结束会话时nav导航栏显示的文字,默认为"会话已结束"
+ *  当客服结束对话时nav导航栏显示的文字,默认为"对话已结束"
  */
 @property (nonatomic, copy) NSString *chatEndShowTitle;
 

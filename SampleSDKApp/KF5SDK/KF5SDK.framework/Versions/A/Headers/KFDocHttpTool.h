@@ -26,7 +26,7 @@
 
 @end
 
-@interface KFDocHttpTool : KFBaseHttpTool
+@interface KFDocHttpTool : NSObject
 
 /**
  *  代理对象

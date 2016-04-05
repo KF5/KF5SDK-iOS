@@ -51,6 +51,7 @@
  */
 @property (nonatomic, assign) int mark;
 
+
 /**
  *  快速创建一个文本消息
  *

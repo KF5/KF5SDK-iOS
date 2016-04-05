@@ -6,27 +6,24 @@
 //
 //
 
-#import "KFBaseMessageViewCell.h"
+#import "KFBaseContentMessageViewCell.h"
 
-@interface KFMessageVoiceViewCell : KFBaseMessageViewCell<UIAppearance>
+@interface KFMessageVoiceViewCell : KFBaseContentMessageViewCell<UIAppearance>
 
 #pragma mark - UIAppearance
+/**
+ *  button的字体
+ */
+@property (nonatomic, strong) UIFont *voiceForButtonFont;
+
+
 /**
  *  普通用户语音button的颜色
  */
 @property (nonatomic, strong) UIColor *voiceForMeButtonColor;
-/**
- *  普通用户语音button的字体
- */
-@property (nonatomic, strong) UIFont *voiceForMeButtonFont;
 
 /**
  *  客服语音button的颜色
  */
 @property (nonatomic, strong) UIColor *voiceForOtherButtonColor;
-/**
- *  客服语音button的字体
- */
-@property (nonatomic, strong) UIFont *voiceForOtherButtonFont;
-
 @end

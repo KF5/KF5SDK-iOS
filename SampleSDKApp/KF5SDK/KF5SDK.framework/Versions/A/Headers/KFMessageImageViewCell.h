@@ -6,11 +6,10 @@
 //
 //
 
-#import "KFBaseMessageViewCell.h"
+#import "KFBaseContentMessageViewCell.h"
 
-@interface KFMessageImageViewCell : KFBaseMessageViewCell
+@interface KFMessageImageViewCell : KFBaseContentMessageViewCell
 
 @property (nonatomic, weak) UIButton *messageImageBtn;
-
 
 @end

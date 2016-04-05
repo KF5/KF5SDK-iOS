@@ -18,7 +18,8 @@
  */
 typedef enum{
     KFNavBarUITypeLocalizedLabel = 0,   //NavBarButton设置为文字
-    KFNavBarUITypeImage                 //NavBarButton设置为图片
+    KFNavBarUITypeImage,                //NavBarButton设置为图片
+    KFNavBarUITypeNone                  //NavBarButton不显示
 }KFNavBarUIType;
 
 /**

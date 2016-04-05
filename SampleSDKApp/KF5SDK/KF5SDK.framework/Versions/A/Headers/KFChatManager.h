@@ -32,7 +32,7 @@
  *  客服被转接通知
  *
  *  @param chatManager 聊天管理对象
- *  @param agent       客服,当客服为空时,说明会话已结束
+ *  @param agent       客服,当客服为空时,说明对话已结束
  */
 - (void)chatManager:(KFChatManager *)chatManager transferAgent:(KFAgent *)agent;
 /**
@@ -88,7 +88,7 @@
 /**
  *  socket是否连接成功
  */
-@property (nonatomic, assign) BOOL isContentSuccess;
+@property (nonatomic, assign) BOOL isConnectSuccess;
 /**
  *  用户自定义信息,需要在连接服务器之前定义(格式@[@{@"name":@"性别",@"value":@"男"},@{@"name":@"爱好",@"value":@"篮球"}])
  */
@@ -181,5 +181,12 @@
  *  @return 时长
  */
 + (double)voiceDurationWithMessage:(KFMessage *)message;
+/**
+ *  判断是否是正在播放的文件
+ *
+ *  @param message 必须是语音消息
+ *
+ */
+- (BOOL)isPlayingWithVoiceMessage:(KFMessage *)voiceMessage;
 
 @end

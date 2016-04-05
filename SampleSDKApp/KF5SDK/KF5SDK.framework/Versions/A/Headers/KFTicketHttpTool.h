@@ -24,7 +24,7 @@
 
 @end
 
-@interface KFTicketHttpTool : KFBaseHttpTool
+@interface KFTicketHttpTool : NSObject
 
 /**
  *  代理对象

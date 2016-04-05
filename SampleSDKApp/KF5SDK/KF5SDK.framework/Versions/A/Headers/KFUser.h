@@ -34,6 +34,10 @@
  */
 @property (nonatomic, copy) NSString *userName;
 /**
+ *  用户手机号
+ */
+@property (nonatomic, copy) NSString *phone;
+/**
  *  用户推送token
  */
 @property (nonatomic, copy) NSString *deviceToken;
