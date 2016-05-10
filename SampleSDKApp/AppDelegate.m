@@ -44,10 +44,12 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     // 初始化配置信息,如果在此处填写了deviceToken,则无需主动调用KFPushUtil里的上传deviceToken的接口
     KFUser *user = [[KFUser alloc]initWithHostName:@"https://tianxiang.kf5.com" appId:@"00155bee6f7945ea5aa21c6ffc35f7aa7ed0999d7c6b6029" email:@"iossdk@kf5.com" appName:@"IOSAPP" deviceToken:nil];
-    [[KFConfig shareConfig]initializeWithUser:user successBlock:^(KFUser *user) {
-        
+    [[KFConfig shareConfig]initializeWithUser:user successBlock:^(KFUser *user,NSString *message) {
+        NSLog(@"success:%@",message);
     } failureBlock:^(KFError *error) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[[UIAlertView alloc]initWithTitle:@"提示" message:error.domain delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+        });
     }];
     
     // UI配置

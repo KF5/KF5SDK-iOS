@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84447AF91CB3BBC900781792 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84447AF81CB3BBC900781792 /* KF5SDK.framework */; };
 		84447AFB1CB3BC0100781792 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84447AFA1CB3BC0100781792 /* Accelerate.framework */; };
+		845583691CE3412F00582E88 /* KF5SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845583681CE3412F00582E88 /* KF5SDK.framework */; };
 		845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */; };
 		845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A4A261ADB6ED300576317 /* ImageIO.framework */; };
 		846B747A1A7F71A800989160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74791A7F71A800989160 /* main.m */; };
@@ -16,8 +16,8 @@
 		846B74801A7F71A800989160 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B747F1A7F71A800989160 /* ViewController.m */; };
 		846B74941A7F71A800989160 /* SampleSDKAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B74931A7F71A800989160 /* SampleSDKAppTests.m */; };
 		84855C1D1B70955D007D830C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84855C1C1B70955D007D830C /* Images.xcassets */; };
-		84B1E8D91C3E76BE004EAA68 /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B1E8D81C3E76BE004EAA68 /* KF5SDK.bundle */; };
-		84C495731C355ABA00E03830 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C495701C355ABA00E03830 /* libopencore-amrnb.a */; };
+		849FA7D61CE1D62A0068EF2C /* KF5SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 849FA7D31CE1D62A0068EF2C /* KF5SDK.bundle */; };
+		849FA7D81CE1D62A0068EF2C /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 849FA7D51CE1D62A0068EF2C /* libopencore-amrnb.a */; };
 		84C495791C355D0000E03830 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C495781C355D0000E03830 /* libsqlite3.tbd */; };
 		84C4957B1C355D2400E03830 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C4957A1C355D2400E03830 /* AudioToolbox.framework */; };
 		84C4957D1C355D3600E03830 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C4957C1C355D3600E03830 /* AVFoundation.framework */; };
@@ -39,8 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		84447AF81CB3BBC900781792 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 		84447AFA1CB3BC0100781792 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		845583681CE3412F00582E88 /* KF5SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KF5SDK.framework; sourceTree = "<group>"; };
 		845A4A241ADB6ECA00576317 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		845A4A261ADB6ED300576317 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		845A4A281ADB6EDD00576317 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -55,8 +55,8 @@
 		846B74921A7F71A800989160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B74931A7F71A800989160 /* SampleSDKAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleSDKAppTests.m; sourceTree = "<group>"; };
 		84855C1C1B70955D007D830C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		84B1E8D81C3E76BE004EAA68 /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
-		84C495701C355ABA00E03830 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		849FA7D31CE1D62A0068EF2C /* KF5SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KF5SDK.bundle; sourceTree = "<group>"; };
+		849FA7D51CE1D62A0068EF2C /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
 		84C495781C355D0000E03830 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		84C4957A1C355D2400E03830 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84C4957C1C355D3600E03830 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -76,8 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845583691CE3412F00582E88 /* KF5SDK.framework in Frameworks */,
+				849FA7D81CE1D62A0068EF2C /* libopencore-amrnb.a in Frameworks */,
 				84447AFB1CB3BC0100781792 /* Accelerate.framework in Frameworks */,
-				84447AF91CB3BBC900781792 /* KF5SDK.framework in Frameworks */,
 				84C4958B1C355E8100E03830 /* JavaScriptCore.framework in Frameworks */,
 				84C495891C355DF500E03830 /* CoreTelephony.framework in Frameworks */,
 				845A4A251ADB6ECA00576317 /* SystemConfiguration.framework in Frameworks */,
@@ -87,7 +88,6 @@
 				84C4957D1C355D3600E03830 /* AVFoundation.framework in Frameworks */,
 				84C495791C355D0000E03830 /* libsqlite3.tbd in Frameworks */,
 				845A4A271ADB6ED300576317 /* ImageIO.framework in Frameworks */,
-				84C495731C355ABA00E03830 /* libopencore-amrnb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +104,7 @@
 		846B746B1A7F71A800989160 = {
 			isa = PBXGroup;
 			children = (
+				849FA7D21CE1D62A0068EF2C /* KF5SDK */,
 				846B74761A7F71A800989160 /* SampleSDKApp */,
 				846B74901A7F71A800989160 /* SampleSDKAppTests */,
 				846B74751A7F71A800989160 /* Products */,
@@ -137,7 +138,6 @@
 		846B74771A7F71A800989160 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84C4956D1C355ABA00E03830 /* KF5SDK */,
 				845A4A281ADB6EDD00576317 /* MapKit.framework */,
 				84447AFA1CB3BC0100781792 /* Accelerate.framework */,
 				845A4A261ADB6ED300576317 /* ImageIO.framework */,
@@ -175,12 +175,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		84C4956D1C355ABA00E03830 /* KF5SDK */ = {
+		849FA7D21CE1D62A0068EF2C /* KF5SDK */ = {
 			isa = PBXGroup;
 			children = (
-				84447AF81CB3BBC900781792 /* KF5SDK.framework */,
-				84B1E8D81C3E76BE004EAA68 /* KF5SDK.bundle */,
-				84C495701C355ABA00E03830 /* libopencore-amrnb.a */,
+				845583681CE3412F00582E88 /* KF5SDK.framework */,
+				849FA7D31CE1D62A0068EF2C /* KF5SDK.bundle */,
+				849FA7D51CE1D62A0068EF2C /* libopencore-amrnb.a */,
 			);
 			path = KF5SDK;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84855C1D1B70955D007D830C /* Images.xcassets in Resources */,
-				84B1E8D91C3E76BE004EAA68 /* KF5SDK.bundle in Resources */,
+				849FA7D61CE1D62A0068EF2C /* KF5SDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +399,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleSDKApp",
 					"$(PROJECT_DIR)/SampleSDKApp/KF5SDK",
+					"$(PROJECT_DIR)/KF5SDK",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -414,6 +415,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleSDKApp/KF5SDK",
+					"$(PROJECT_DIR)/KF5SDK",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -434,6 +436,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleSDKApp",
 					"$(PROJECT_DIR)/SampleSDKApp/KF5SDK",
+					"$(PROJECT_DIR)/KF5SDK",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -449,6 +452,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleSDKApp/KF5SDK",
+					"$(PROJECT_DIR)/KF5SDK",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",

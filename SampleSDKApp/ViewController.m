@@ -131,8 +131,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     [KFHelpCenter setNavBarConversationsUIType:KFNavBarUITypeLocalizedLabel];
     /**
-     [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeDocument rightBarButtonActionBlock:^{
-     [self buttonAction3];
+    __weak typeof(self)weakSelf = self;
+     [KFHelpCenter showHelpCenterWithNavController:self.navigationController helpCenterType:KFHelpCenterTypeCategory rightBarButtonActionBlock:^{
+         [weakSelf chat];
      }];
      */
 
@@ -143,11 +144,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [KFRequests presentRequestCreationWithNavController:self.navigationController];
     /**
      [KFRequests presentRequestCreationWithNavController:self.navigationController fieldDict:@{@"field_3588":@"安装",@"field_4587":@"text123"} success:^(id result) {
-     NSLog(@"------%@",result);
-     } andError:^(NSError *error) {
-     NSLog(@"%@",error);
+        NSLog(@"------%@",result);
+     } andError:^(KFError *error) {
+        NSLog(@"%@",error);
      }];
-     */
+     /*/
 }
 
 // 反馈列表
@@ -155,10 +156,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     [KFRequests showRequestListWithNavController:self.navigationController];
     /**
-     [KFRequests showRequestListWithNavController:self.navigationController rightBarButtonActionBlock:^{
-     [self buttonAction2];
-     }];
-     */
+    __weak typeof(self)weakSelf = self;
+    [KFRequests showRequestListWithNavController:self.navigationController rightBarButtonActionBlock:^{
+        [weakSelf helpCenter];
+    }];
+    /*/
 }
 
 - (void)chat
