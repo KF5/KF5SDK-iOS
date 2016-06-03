@@ -119,6 +119,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
             break;
         case 3:
             [self chat];
+            break;
         default:
             break;
     }

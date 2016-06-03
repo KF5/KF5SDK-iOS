@@ -97,12 +97,17 @@
  *  单例
  */
 + (instancetype)sharedChatManager;
-
+/**
+ *  连接服务器
+ */
+- (void)connectWithUser:(KFUser *)user completion:(KFChatCompletion)completion;
 /**
  *  发送消息
  *
  *  @param message    消息实体
  *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
 - (void)sendMessage:(KFMessage *)message completion:(KFChatMessageCompletion)completion;
 /**
@@ -112,28 +117,30 @@
  *  @param completion 成功或失败的回调
  *
  *  @return 用于显示的消息实体
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
 - (KFMessage *)resendMessage:(KFMessage *)message completion:(KFChatMessageCompletion)completion;
 /**
- *  上线
- */
-- (void)connectWithUser:(KFUser *)user completion:(KFChatCompletion)completion;
-
-/**
  *  设置用户离线,KF5服务器回向推送url发送推送,建议在应用进入后台时调用
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
 - (void)setUserOffline;
-
 /**
  *  分配客服
  *
  *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
 - (void)getAgentWithCompletion:(KFChatGetAgentCompletion)completion;
 /**
  *  发送满意度
  *
  *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
 - (void)sendRating:(BOOL)rating completion:(KFChatCompletion)completion;
 
@@ -143,14 +150,20 @@
  *  @param from_id    消息的id,从哪条消息开始
  *  @param count      要获取的数量
  *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
 - (void)getHistoryWithFrom_id:(NSString *)from_id count:(int)count completion:(KFChatGetHistoryCompletion)completion;
 /**
  *  同步离线消息
  *
  *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
 - (void)syncMessageWithCompletion:(KFChatGetHistoryCompletion)completion;
+
+#pragma mark - 音频相关
 /**
  *  开始录制音频
  */
@@ -188,5 +201,13 @@
  *
  */
 - (BOOL)isPlayingWithVoiceMessage:(KFMessage *)voiceMessage;
+
+#pragma mark 其他
+/**
+ *  获取聊天消息未读数
+ *
+ * @warning  未读消息数不是很精确,不建议直接使用其数量提示用户;最好的方式是用此接口获取是否有未读消息(HTTP请求)
+ */
+- (void)getUnReadMessageCountWithCompletion:(KFChatUnReadMessageCountCompletion)completion;
 
 @end

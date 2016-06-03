@@ -23,13 +23,17 @@
 /**
  *  快速创建一个error
  */
-+ (instancetype)errorWithDomain:(NSString *)domain code:(NSInteger)code localizedDescription:(NSString *)localizedDescription;
++ (instancetype)kf_errorWithDomain:(NSString *)domain code:(NSInteger)code;
 /**
  *  快速创建一个error
  *
  *  @param dict   @{@"error":200,@"message":@"错误具体描述"}
  *
  */
-+ (instancetype)errorWithDomain:(NSString *)domain dict:(NSDictionary *)dict;
++ (instancetype)kf_errorWithDomain:(NSString *)domain dict:(NSDictionary *)dict;
+/**
+ *  快速创建一个error
+ */
++ (instancetype)kf_errorWithDomain:(NSString *)domain code:(NSInteger)code localizedDescription:(NSString *)localizedDescription;
 
 @end

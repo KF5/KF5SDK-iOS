@@ -16,56 +16,56 @@
 /**
  *  用户信息验证方式
  */
-typedef enum{
+typedef NS_ENUM(NSInteger,KFVerifyUserType){
     KFVerifyUserTypeDefault = 0,    // 使用默认,以邮箱为验证方式
     KFVerifyUserTypeEmail,          // 以邮箱为验证方式
     KFVerifyUserTypePhone           // 以手机号为验证方式
-}KFVerifyUserType;
+};
 
 /**
  *  NavBarButton的显示方式
  */
-typedef enum{
+typedef NS_ENUM(NSInteger,KFNavBarUIType){
     KFNavBarUITypeLocalizedLabel = 0,   //NavBarButton设置为文字
     KFNavBarUITypeImage,                //NavBarButton设置为图片
     KFNavBarUITypeNone                  //NavBarButton不显示
-}KFNavBarUIType;
+};
 
 /**
  *  文档展示方式
  */
-typedef  enum{
+typedef NS_ENUM(NSInteger,KFHelpCenterType){
     KFHelpCenterTypeDefault = 0,  // 使用默认,默认使用KFHelpCenterTypeCategory
-    KFHelpCenterTypeCategory,     // 展示分区列表
-    KFHelpCenterTypeForum,        // 直接展示所有分类列表
-    KFHelpCenterTypePost,         // 直接展示所有文档列表
-}KFHelpCenterType;
+    KFHelpCenterTypeCategory,     // 分区列表
+    KFHelpCenterTypeForum,        // 分类列表
+    KFHelpCenterTypePost,         // 文档列表
+};
 
 /**
  *  消息发送状态
  */
-typedef enum {
+typedef NS_ENUM(NSInteger,kMessageStatus) {
     kMessageStatusSending = 0,
     kMessageStatusSuccess,
     kMessageStatusFailure
-}kMessageStatus;
+};
 /**
  *  消息类型
  */
-typedef enum {
+typedef NS_ENUM(NSInteger,kMessageType) {
     kMessageTypeText = 0,
     kMessageTypeImage,
     kMessageTypeVoice,
     kMessageTypeSystem,
     kMessageTypeOther
-}kMessageType;
+};
 /**
  *  消息来自于
  */
-typedef enum {
+typedef NS_ENUM(NSInteger,kMessageFrom) {
     kMessageFromMe = 0,
     kMessageFromOther
-}kMessageFrom;
+};
 
 
 /**
@@ -98,9 +98,11 @@ typedef void (^KFBarButtonActionBlock)();
 typedef void (^KFAlertActionBlock)();
 
 
+typedef void (^KFChatUnReadMessageCountCompletion)(KFError *error,int unReadMessageCount);
+
 typedef void (^KFChatMessageCompletion)(KFError *error,KFMessage *message);
 
-typedef void (^KFChatGetHistoryCompletion)(KFError *error,NSArray *history);
+typedef void (^KFChatGetHistoryCompletion)(KFError *error,NSArray<KFMessage *> *history);
 
 typedef void (^KFChatGetAgentCompletion)(KFError *error,KFAgent *agent);
 
