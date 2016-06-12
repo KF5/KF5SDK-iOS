@@ -42,7 +42,7 @@
 /**
  *  发送状态
  */
-@property (nonatomic, assign) kMessageStatus cellLoad;
+@property (nonatomic, assign) KFMessageStatus cellLoad;
 
 + (NSArray *)commentWithDict:(NSDictionary *)dict;
 

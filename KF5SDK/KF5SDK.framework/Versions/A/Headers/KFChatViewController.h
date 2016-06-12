@@ -26,9 +26,9 @@
  */
 @property (nonatomic, assign) BOOL isDisConnectWhenDelloc;
 /**
- *  当没有客服在线时是否弹出alertView,默认为YES
+ *  当没有客服在线或客服忙碌时是否弹出alertView,默认为YES
  *
- *  注:当设置为NO时,noAgentAlertShowTitle和noAgentAlertActionBlock将失效
+ *  注:当设置为NO时,noAgentAlertShowTitle,agentBusyAlertShowTitle和noAgentAlertActionBlock将失效
  */
 @property (nonatomic, assign) BOOL isShowAlertWhenNoAgent;
 /**
@@ -36,7 +36,11 @@
  */
 @property (nonatomic, copy) NSString *noAgentAlertShowTitle;
 /**
- *  当没有客服在线弹出alertView,点击"确定"按钮的事件处理,默认跳转到反馈工单界面
+ *  当客服忙碌时,弹出alertView显示的title,默认为"当前客服忙碌,请提交留言"
+ */
+@property (nonatomic, copy) NSString *agentBusyAlertShowTitle;
+/**
+ *  当没有客服在线或客服忙碌时,弹出alertView,点击"确定"按钮的事件处理,默认跳转到反馈工单界面
  */
 @property (nonatomic, copy) KFAlertActionBlock noAgentAlertActionBlock;
 /**
@@ -65,9 +69,15 @@
  */
 @property (nonatomic, copy) NSString *getAgentingShowTitle;
 /**
- *  当分配客服失败时nav导航栏显示的文字,默认为"当前没有客服在线"
+ *  当分配客服失败或没有客服在线时nav导航栏显示的文字,默认为"当前没有客服在线"
  */
 @property (nonatomic, copy) NSString *noAgentShowTitle;
+/**
+ *  当客服忙碌时nav导航栏显示的文字,默认为"客服忙碌"
+ *
+ *  @warning 客服忙碌时的处理和noAgent是一样
+ */
+@property (nonatomic, copy) NSString *agentBusyShowTitle;
 /**
  *  当客服结束对话时nav导航栏显示的文字,默认为"对话已结束"
  */

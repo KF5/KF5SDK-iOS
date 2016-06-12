@@ -19,12 +19,12 @@
 /**
  *  信息的发送人
  */
-@property (nonatomic, assign) kMessageFrom messageFrom;
+@property (nonatomic, assign) KFMessageFrom messageFrom;
 
 /**
  *  消息类型
  */
-@property (nonatomic, assign) kMessageType messageType;
+@property (nonatomic, assign) KFMessageType messageType;
 /**
  *  消息.(当消息类型不是文本时,此属性会保存图片或语音的token,不建议开发者处理)
  */
@@ -45,7 +45,7 @@
 /**
  *   消息是否发送成功
  */
-@property (nonatomic, assign) kMessageStatus messageStatus;
+@property (nonatomic, assign) KFMessageStatus messageStatus;
 /**
  *  传输标记
  */

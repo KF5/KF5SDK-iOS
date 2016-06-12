@@ -11,7 +11,7 @@
 
 @interface KFBaseContentMessageViewCell : KFBaseChatMessageViewCell<UIAppearance>
 
-- (void)setMessageStatus:(kMessageStatus)messageStatus;
+- (void)setMessageStatus:(KFMessageStatus)messageStatus;
 
 #pragma mark - UIAppearance
 /**

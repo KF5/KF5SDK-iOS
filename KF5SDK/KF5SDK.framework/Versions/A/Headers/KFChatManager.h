@@ -62,6 +62,8 @@
 @interface KFChatManager : NSObject
 /**
  *  添加代理
+ *
+ * @warning 在不使用时建议调用删除代理方法(removeDelegate)
  */
 - (void)addDelegate:(id<KFChatManagerDelegate>)delegate;
 /**
@@ -70,6 +72,8 @@
 - (void)removeDelegate:(id<KFChatManagerDelegate>)delegate;
 /**
  *  删除所有代理
+ *
+ * @warning 会删除所有代理方法(包括KFChatViewController里的代理),不建议开发者调用
  */
 - (void)removeAllDelegates;
 /**
@@ -79,16 +83,27 @@
 /**
  *  当前客服
  */
-@property (nonatomic, strong) KFAgent *currentAgent;
-
+@property (nonatomic, strong,readonly) KFAgent *currentAgent;
 /**
  *  是否有在线客服
  */
-@property (nonatomic, assign) BOOL hasOnlineAgent;
+@property (nonatomic, assign) BOOL hasOnlineAgent __deprecated_msg("该变量已被弃用");
 /**
  *  socket是否连接成功
  */
-@property (nonatomic, assign) BOOL isConnectSuccess;
+@property (nonatomic, assign,readonly) BOOL isConnectSuccess;
+/**
+ *  是否开启聊天机器人
+ *
+ *  @warning socket连接成功后有效
+ */
+@property (nonatomic, assign,readonly) BOOL isOpenAIAgent;
+/**
+ *  是否正在和客服对话
+ *
+ *  @warning socket连接成功后有效
+ */
+@property (nonatomic, assign,readonly) BOOL isChatting;
 /**
  *  用户自定义信息,需要在连接服务器之前定义(格式@[@{@"name":@"性别",@"value":@"男"},@{@"name":@"爱好",@"value":@"篮球"}])
  */
@@ -101,6 +116,39 @@
  *  连接服务器
  */
 - (void)connectWithUser:(KFUser *)user completion:(KFChatCompletion)completion;
+/**
+ *  同步离线消息
+ *
+ *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ */
+- (void)syncMessageWithCompletion:(KFChatGetHistoryCompletion)completion;
+
+/**
+ *  给机器人发送消息
+ *
+ *  @param message    消息实体
+ *  @param completion 成功或失败的回调,回调中有机器人返回的消息
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ *           与机器人的聊天内容将不保存到数据库
+ */
+- (void)sendAITextMessage:(KFMessage *)message completion:(KFChatAIMessageCompletion)completion;
+/**
+ *  获取机器人客服的信息
+ *
+ *  @param completion 成功或失败的回调
+ */
+- (void)getAIAgentWithCompletion:(KFChatGetAgentCompletion)completion;
+/**
+ *  分配客服
+ *
+ *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ */
+- (void)getAgentWithCompletion:(KFChatGetAgentCompletion)completion;
 /**
  *  发送消息
  *
@@ -122,20 +170,6 @@
  */
 - (KFMessage *)resendMessage:(KFMessage *)message completion:(KFChatMessageCompletion)completion;
 /**
- *  设置用户离线,KF5服务器回向推送url发送推送,建议在应用进入后台时调用
- *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
- */
-- (void)setUserOffline;
-/**
- *  分配客服
- *
- *  @param completion 成功或失败的回调
- *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
- */
-- (void)getAgentWithCompletion:(KFChatGetAgentCompletion)completion;
-/**
  *  发送满意度
  *
  *  @param completion 成功或失败的回调
@@ -143,7 +177,6 @@
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
 - (void)sendRating:(BOOL)rating completion:(KFChatCompletion)completion;
-
 /**
  *  获取历史记录
  *
@@ -155,13 +188,11 @@
  */
 - (void)getHistoryWithFrom_id:(NSString *)from_id count:(int)count completion:(KFChatGetHistoryCompletion)completion;
 /**
- *  同步离线消息
- *
- *  @param completion 成功或失败的回调
+ *  设置用户离线,KF5服务器回向推送url发送推送,建议在应用进入后台时调用
  *
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
  */
-- (void)syncMessageWithCompletion:(KFChatGetHistoryCompletion)completion;
+- (void)setUserOffline;
 
 #pragma mark - 音频相关
 /**
