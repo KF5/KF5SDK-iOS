@@ -32,7 +32,7 @@
  *  @param successBlock 成功的回调
  *  @param failureBlock 失败的回调
  *
- *  当系统已经存在一个用户时,会先注销原来的用户,在初始化新的用户
+ *  @warning 当系统已经存在一个用户时,会先注销原来的用户,在初始化新的用户(异步方法)
  */
 - (void)initializeWithUser:(KFUser *)user successBlock:(KFInitSuccess)successBlock failureBlock:(KFAPIError)failureBlock;
 /**

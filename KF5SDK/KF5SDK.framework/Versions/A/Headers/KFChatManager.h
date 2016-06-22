@@ -105,7 +105,9 @@
  */
 @property (nonatomic, assign,readonly) BOOL isChatting;
 /**
- *  用户自定义信息,需要在连接服务器之前定义(格式@[@{@"name":@"性别",@"value":@"男"},@{@"name":@"爱好",@"value":@"篮球"}])
+ *  用户自定义信息
+ *
+ *  @warning 需要在连接服务器之前定义(格式@[@{@"name":@"性别",@"value":@"男"},@{@"name":@"爱好",@"value":@"篮球"}])
  */
 @property (nonatomic, strong) NSArray *customFields;
 /**
@@ -114,6 +116,8 @@
 + (instancetype)sharedChatManager;
 /**
  *  连接服务器
+ *
+ * @warning 如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (void)connectWithUser:(KFUser *)user completion:(KFChatCompletion)completion;
 /**
@@ -121,7 +125,8 @@
  *
  *  @param completion 成功或失败的回调
  *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (void)syncMessageWithCompletion:(KFChatGetHistoryCompletion)completion;
 
@@ -132,13 +137,17 @@
  *  @param completion 成功或失败的回调,回调中有机器人返回的消息
  *
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
- *           与机器人的聊天内容将不保存到数据库
+ *           与机器人的聊天内容将不保存到数据库.
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (void)sendAITextMessage:(KFMessage *)message completion:(KFChatAIMessageCompletion)completion;
 /**
  *  获取机器人客服的信息
  *
  *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (void)getAIAgentWithCompletion:(KFChatGetAgentCompletion)completion;
 /**
@@ -146,7 +155,8 @@
  *
  *  @param completion 成功或失败的回调
  *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (void)getAgentWithCompletion:(KFChatGetAgentCompletion)completion;
 /**
@@ -155,7 +165,8 @@
  *  @param message    消息实体
  *  @param completion 成功或失败的回调
  *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (void)sendMessage:(KFMessage *)message completion:(KFChatMessageCompletion)completion;
 /**
@@ -166,7 +177,8 @@
  *
  *  @return 用于显示的消息实体
  *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (KFMessage *)resendMessage:(KFMessage *)message completion:(KFChatMessageCompletion)completion;
 /**
@@ -174,7 +186,8 @@
  *
  *  @param completion 成功或失败的回调
  *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (void)sendRating:(BOOL)rating completion:(KFChatCompletion)completion;
 /**
@@ -184,13 +197,14 @@
  *  @param count      要获取的数量
  *  @param completion 成功或失败的回调
  *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
 - (void)getHistoryWithFrom_id:(NSString *)from_id count:(int)count completion:(KFChatGetHistoryCompletion)completion;
 /**
  *  设置用户离线,KF5服务器回向推送url发送推送,建议在应用进入后台时调用
  *
- *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求)
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
  */
 - (void)setUserOffline;
 
@@ -237,7 +251,7 @@
 /**
  *  获取聊天消息未读数
  *
- * @warning  未读消息数不是很精确,不建议直接使用其数量提示用户;最好的方式是用此接口获取是否有未读消息(HTTP请求)
+ * @warning 未读消息数不是很精确,不建议直接使用其数量提示用户;最好的方式是用此接口获取是否有未读消息(HTTP请求)
  */
 - (void)getUnReadMessageCountWithCompletion:(KFChatUnReadMessageCountCompletion)completion;
 

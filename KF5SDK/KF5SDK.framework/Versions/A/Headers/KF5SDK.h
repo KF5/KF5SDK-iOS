@@ -82,12 +82,10 @@
 #import "KFDocument.h"
 
 #pragma mark 其他
-#import "KFBaseStatus.h"
 #import "KFDispatcher.h"
 #import "KFError.h"
 #import "KFLogger.h"
 #import "interf_dec.h"
 #import "interf_enc.h"
-
 
 #endif 
