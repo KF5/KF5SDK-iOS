@@ -33,8 +33,9 @@
  *  @param failureBlock 失败的回调
  *
  *  @warning 当系统已经存在一个用户时,会先注销原来的用户,在初始化新的用户(异步方法)
+             建议在用户退出登录时,调用logoutOfUser接口,注销用户
  */
-- (void)initializeWithUser:(KFUser *)user successBlock:(KFInitSuccess)successBlock failureBlock:(KFAPIError)failureBlock;
+- (void)initializeWithUser:(KFUser *)user successBlock:(void (^) (KFUser *user,NSString *message))successBlock failureBlock:(KFAPIError)failureBlock;
 /**
  *  获取普通用户可以编辑的自定义字段
  *
@@ -51,7 +52,7 @@
 /**
  *  注销用户
  *
- *  会删除该用户的deviceToken,清除初始化的用户信息,再次访问KF5接口,需重新初始化
+ *  会调用KFPushUtil的disablePush:withSuccess:方法删除该用户的deviceToken,清除手机里初始化的用户信息,再次访问KF5接口,需重新初始化
  */
 - (void)logoutOfUser;
 

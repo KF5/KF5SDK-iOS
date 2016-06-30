@@ -17,10 +17,6 @@
  *  systemLabel
  */
 @property (nonatomic, weak) UILabel *systemLabel;
-/**
- *  systemContent
- */
-@property (nonatomic, copy) NSString *systemContent;
 
 #pragma mark - UIAppearance
 /**

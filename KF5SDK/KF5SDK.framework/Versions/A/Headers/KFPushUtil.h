@@ -25,6 +25,8 @@
  *  deviceToken   设备的deviceToken
  *  success       成功时回调函数
  *  error         失败时回调函数
+ *
+ *  @warning  如果已经调用[[KFConfig shareConfig]logoutOfUser]则无需再次调用此接口
  */
 + (void)disablePush:(NSString *)deviceToken withSuccess:(KFAPISuccess)success
            andError:(KFAPIError)error;

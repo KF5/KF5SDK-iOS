@@ -29,12 +29,19 @@
  */
 - (void)chatManager:(KFChatManager *)chatManager receiveMessages:(NSArray *)chatMessages;
 /**
- *  客服被转接通知
+ *  用户排队的当前位置
+ *
+ *  @param chatManager  聊天管理对象
+ *  @param queueIndex   当前位置
+ */
+- (void)chatManager:(KFChatManager *)chatManager queueIndex:(NSInteger)queueIndex;
+/**
+ *  分配到客服/转接客服
  *
  *  @param chatManager 聊天管理对象
  *  @param agent       客服,当客服为空时,说明对话已结束
  */
-- (void)chatManager:(KFChatManager *)chatManager transferAgent:(KFAgent *)agent;
+- (void)chatManager:(KFChatManager *)chatManager currectAgent:(KFAgent *)agent;
 /**
  *  客服发起满意度评价
  *
@@ -56,6 +63,10 @@
  *  @param error       错误信息,为nil表示为成功
  */
 - (void)chatManager:(KFChatManager *)chatManager recordVoiceMessage:(KFMessage *)message error:(KFError *)error;
+
+#pragma mark - deprecated
+
+- (void)chatManager:(KFChatManager *)chatManager transferAgent:(KFAgent *)agent __deprecated_msg("该方法被弃用,请使用chatManager:currectAgent:");
 
 @end
 
@@ -84,26 +95,18 @@
  *  当前客服
  */
 @property (nonatomic, strong,readonly) KFAgent *currentAgent;
-/**
- *  是否有在线客服
- */
-@property (nonatomic, assign) BOOL hasOnlineAgent __deprecated_msg("该变量已被弃用");
+
 /**
  *  socket是否连接成功
  */
 @property (nonatomic, assign,readonly) BOOL isConnectSuccess;
+
 /**
- *  是否开启聊天机器人
+ *  当前对话状态
  *
  *  @warning socket连接成功后有效
  */
-@property (nonatomic, assign,readonly) BOOL isOpenAIAgent;
-/**
- *  是否正在和客服对话
- *
- *  @warning socket连接成功后有效
- */
-@property (nonatomic, assign,readonly) BOOL isChatting;
+@property (nonatomic, assign,readonly) KFChatStatus chatStatus;
 /**
  *  用户自定义信息
  *
@@ -119,7 +122,7 @@
  *
  * @warning 如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
-- (void)connectWithUser:(KFUser *)user completion:(KFChatCompletion)completion;
+- (void)connectWithUser:(KFUser *)user completion:(void (^)(KFError *error))completion;
 /**
  *  同步离线消息
  *
@@ -128,7 +131,7 @@
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
  *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
-- (void)syncMessageWithCompletion:(KFChatGetHistoryCompletion)completion;
+- (void)syncMessageWithCompletion:(void (^)(KFError *error,NSArray<KFMessage *> *history))completion;
 
 /**
  *  给机器人发送消息
@@ -140,7 +143,7 @@
  *           与机器人的聊天内容将不保存到数据库.
  *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
-- (void)sendAITextMessage:(KFMessage *)message completion:(KFChatAIMessageCompletion)completion;
+- (void)sendAITextMessage:(KFMessage *)message completion:(void (^)(KFError *error,KFMessage *me_message,KFMessage *ai_message))completion;
 /**
  *  获取机器人客服的信息
  *
@@ -149,16 +152,25 @@
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
  *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
-- (void)getAIAgentWithCompletion:(KFChatGetAgentCompletion)completion;
+- (void)getAIAgentWithCompletion:(void (^)(KFError *error,KFAgent *agent))completion;
 /**
- *  分配客服
+ *  用户加入排队
  *
  *  @param completion 成功或失败的回调
  *
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
  *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
-- (void)getAgentWithCompletion:(KFChatGetAgentCompletion)completion;
+- (void)queueUpWithCompletion:(void (^)(KFError *error,NSInteger queue_index))completion;
+/**
+ *  用户取消排队
+ *
+ *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
+ */
+- (void)queueCancelWithCompletion:(void (^)(KFError *error))completion;
 /**
  *  发送消息
  *
@@ -166,9 +178,14 @@
  *  @param completion 成功或失败的回调
  *
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
- *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
+ *           当处于排队期间:1.允许发送一条消息,用于在排队结束,客服能看到并处理该用户的问题;
+ *                        2.发送的消息不会存储到本地数据库,需开发者自行保存;
+ *                        3.只能发送文本消息,否则会失败;
+ *                        4.多次调用此接口,则客服在排队完成后只会接收最后一条消息.
+ *           状态通过chatStatus得到
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口.
  */
-- (void)sendMessage:(KFMessage *)message completion:(KFChatMessageCompletion)completion;
+- (void)sendMessage:(KFMessage *)message completion:(void (^)(KFError *error,KFMessage *message))completion;
 /**
  *  重新发送消息
  *
@@ -180,7 +197,7 @@
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
  *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
-- (KFMessage *)resendMessage:(KFMessage *)message completion:(KFChatMessageCompletion)completion;
+- (KFMessage *)resendMessage:(KFMessage *)message completion:(void (^)(KFError *error,KFMessage *message))completion;
 /**
  *  发送满意度
  *
@@ -189,7 +206,7 @@
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
  *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
-- (void)sendRating:(BOOL)rating completion:(KFChatCompletion)completion;
+- (void)sendRating:(BOOL)rating completion:(void (^)(KFError *error))completion;
 /**
  *  获取历史记录
  *
@@ -200,7 +217,7 @@
  *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
  *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
  */
-- (void)getHistoryWithFrom_id:(NSString *)from_id count:(int)count completion:(KFChatGetHistoryCompletion)completion;
+- (void)getHistoryWithFrom_id:(NSString *)from_id count:(int)count completion:(void (^)(KFError *error,NSArray<KFMessage *> *history))completion;
 /**
  *  设置用户离线,KF5服务器回向推送url发送推送,建议在应用进入后台时调用
  *
@@ -226,7 +243,7 @@
  *
  *  @param completion 成功或失败的回调
  */
-- (void)playVoiceMessage:(KFMessage *)message completion:(KFChatCompletion)completion;
+- (void)playVoiceMessage:(KFMessage *)message completion:(void (^)(KFError *error))completion;
 /**
  *  停止音频播放
  */
@@ -253,6 +270,36 @@
  *
  * @warning 未读消息数不是很精确,不建议直接使用其数量提示用户;最好的方式是用此接口获取是否有未读消息(HTTP请求)
  */
-- (void)getUnReadMessageCountWithCompletion:(KFChatUnReadMessageCountCompletion)completion;
+- (void)getUnReadMessageCountWithCompletion:(void (^)(KFError *error,int unReadMessageCount))completion;
+
+
+
+
+#pragma mark - deprecated
+/**
+ *  是否有在线客服
+ */
+@property (nonatomic, assign) BOOL hasOnlineAgent __deprecated_msg("该变量已被弃用");
+/**
+ *  是否开启聊天机器人
+ *
+ *  @warning socket连接成功后有效
+ */
+@property (nonatomic, assign,readonly) BOOL isOpenAIAgent __deprecated_msg("该变量已被弃用,请使用chatStatus");
+/**
+ *  是否正在和客服对话
+ *
+ *  @warning socket连接成功后有效
+ */
+@property (nonatomic, assign,readonly) BOOL isChatting __deprecated_msg("该变量已被弃用,请使用chatStatus");
+/**
+ *  分配客服
+ *
+ *  @param completion 成功或失败的回调
+ *
+ *  @warning 需要先调用connectWithUser:completion:连接服务器(socket请求).
+ *           如果使用KFChatViewController,在无特殊需求的情况下,不必调用此接口
+ */
+- (void)getAgentWithCompletion:(void (^)(KFError *error,KFAgent *agent))completion  __deprecated_msg("该方法已被弃用,SDK现已加入排队功能,请调用排队接口,之后在代理里接收分配的客服");
 
 @end
