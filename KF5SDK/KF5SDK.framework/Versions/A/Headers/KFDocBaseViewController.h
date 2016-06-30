@@ -45,6 +45,6 @@
 /**
  *  点击navBar右侧按钮的事件处理,默认跳转到工单列表
  */
-@property (nonatomic, copy) KFBarButtonActionBlock actionBlock;
+@property (nonatomic, copy) void (^actionBlock)();
 
 @end
