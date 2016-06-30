@@ -96,7 +96,7 @@
  *  @param actionBlock   点击工单列表navBar右侧按钮的事件处理，
  *                          为NULL直接跳转到创建工单控制器（不带工单自定义参数）
  */
-+ (KFTicketListViewController *) showRequestListWithNavController:(UINavigationController *)navController rightBarButtonActionBlock:(KFBarButtonActionBlock)actionBlock;
++ (KFTicketListViewController *) showRequestListWithNavController:(UINavigationController *)navController rightBarButtonActionBlock:(void (^)())actionBlock;
 
 /**
  *  present工单列表视图控制器
@@ -111,7 +111,7 @@
  *  @param actionBlock   点击工单列表navBar右侧按钮的事件处理，
  *                          为NULL直接跳转到创建工单控制器（不带工单自定义参数）
  */
-+ (KFTicketListViewController *) presentRequestListWithNavController:(UINavigationController *)navController rightBarButtonActionBlock:(KFBarButtonActionBlock)actionBlock;
++ (KFTicketListViewController *) presentRequestListWithNavController:(UINavigationController *)navController rightBarButtonActionBlock:(void (^)())actionBlock;
 
 
 #pragma mark 创建工单控制器导航栏初始化

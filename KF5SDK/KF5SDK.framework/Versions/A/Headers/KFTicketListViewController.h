@@ -18,6 +18,6 @@
 /**
  *  点击navBar右侧按钮的事件处理,默认跳转到反馈工单界面
  */
-@property (nonatomic, copy) KFBarButtonActionBlock actionBlock;
+@property (nonatomic, copy) void (^actionBlock)();
 
 @end

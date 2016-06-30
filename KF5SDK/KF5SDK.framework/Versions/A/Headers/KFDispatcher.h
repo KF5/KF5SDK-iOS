@@ -76,10 +76,20 @@ typedef NS_ENUM(NSInteger,KFAgentRole) {
 };
 
 /**
+ *  当前对话状态
+ */
+typedef NS_ENUM(NSInteger,KFChatStatus) {
+    KFChatStatusNone = 0,
+    KFChatStatusAIAgent,    // 正在和机器人对话
+    KFChatStatusChatting,   // 正在进行对话
+    KFChatStatusQueue,      // 正在排队
+};
+/**
  *  错误类型
  */
 typedef NS_ENUM(NSInteger,KFErrorCode) {
     KFErrorCodeNone            = 0,     // 没有错误
+    KFErrorCodeDeprecated      = 1000,  // 过期方法错误提醒
     KFErrorCodeAgentOffline    = 1001,  // 没有客服在线
     KFErrorCodeAgentBusy       = 1002,  // 客服忙碌
     KFErrorCodeSocketError     = 5000,  // 服务器连接失败
@@ -90,51 +100,15 @@ typedef NS_ENUM(NSInteger,KFErrorCode) {
     KFErrorCodeRecordError     = 500001,// 录音出错
     KFErrorCodeAudioPalyError  = 500002,// 录音播放出错
     KFErrorCodeRecordTimeShort = 20000, // 录音时间过短
-    
 };
 
 /**
  * API success block.
  */
 typedef void (^KFAPISuccess) (NSDictionary *result);
-
-typedef void (^KFAPIDownloadVoiceSuccess) (KFMessage *message);
-
-
-typedef void (^KFInitSuccess) (KFUser *user,NSString *message);
-
 /**
  * API error block
  */
 typedef void (^KFAPIError) (KFError *error);
-/**
- *  API progress block
- */
-typedef void  (^KFAPIUploadProgress)(NSProgress * progress);
-
-/**
- *  点击BarButton的回调
- */
-typedef void (^KFBarButtonActionBlock)();
-
-/**
- *  alert点击确定的回调
- */
-typedef void (^KFAlertActionBlock)();
-
-
-typedef void (^KFChatUnReadMessageCountCompletion)(KFError *error,int unReadMessageCount);
-
-typedef void (^KFChatMessageCompletion)(KFError *error,KFMessage *message);
-
-typedef void (^KFChatAIMessageCompletion)(KFError *error,KFMessage *me_message,KFMessage *ai_message);
-
-typedef void (^KFChatGetHistoryCompletion)(KFError *error,NSArray<KFMessage *> *history);
-
-typedef void (^KFChatGetAgentCompletion)(KFError *error,KFAgent *agent);
-
-typedef void (^KFChatCompletion)(KFError *error);
-
-typedef void (^KFChatDefaultCompletion)(KFError *error,NSDictionary *dict);
 
 @end

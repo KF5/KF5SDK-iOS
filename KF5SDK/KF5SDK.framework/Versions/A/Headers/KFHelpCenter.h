@@ -48,7 +48,7 @@
  *  @param actionBlock    点击navBar右侧按钮的事件处理，为NULL直接跳转到工单列表
  */
 + (KFDocBaseViewController *)showHelpCenterWithNavController:(UINavigationController*)navController
-                         helpCenterType:(KFHelpCenterType)helpCenterType rightBarButtonActionBlock:(KFBarButtonActionBlock)actionBlock;
+                         helpCenterType:(KFHelpCenterType)helpCenterType rightBarButtonActionBlock:(void (^)())actionBlock;
 
 /**
  *  present知识库文档控制器
@@ -67,7 +67,7 @@
  *  @param actionBlock    点击navBar右侧按钮的事件处理，为NULL直接跳转到工单列表
  */
 + (KFDocBaseViewController *) presentHelpCenterWithNavController:(UINavigationController*)navController
-                             helpCenterType:(KFHelpCenterType)helpCenterType rightBarButtonActionBlock:(KFBarButtonActionBlock)actionBlock;
+                             helpCenterType:(KFHelpCenterType)helpCenterType rightBarButtonActionBlock:(void (^)())actionBlock;
 
 
 #pragma mark - 导航栏显示初始化

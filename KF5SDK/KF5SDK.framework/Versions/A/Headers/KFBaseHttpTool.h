@@ -45,7 +45,7 @@
  *  @param successBlock        上传成功的回调
  *  @param failureBlock        上传失败的回调
  */
-+ (NSURLSessionDataTask *)uploadWithImages:(NSArray *)images uploadProgress:(KFAPIUploadProgress)uploadProgressBlock successBlock:(KFAPISuccess)successBlock failureBlock:(KFAPIError)failureBlock ;
++ (NSURLSessionDataTask *)uploadWithImages:(NSArray *)images uploadProgress:(void  (^)(NSProgress * progress))uploadProgressBlock successBlock:(KFAPISuccess)successBlock failureBlock:(KFAPIError)failureBlock ;
 
 /**
  *  IM上传图片
