@@ -14,26 +14,26 @@
 /**
  *  Label的字体
  */
-@property (nonatomic, strong) UIFont *messageForLabelFont;
+@property (nonatomic, strong) UIFont *messageForLabelFont UI_APPEARANCE_SELECTOR;
 
 
 /**
  *  普通用户消息Label的颜色
  */
-@property (nonatomic, strong) UIColor *messageForMeLabelColor;
+@property (nonatomic, strong) UIColor *messageForMeLabelColor UI_APPEARANCE_SELECTOR;
 /**
  *  普通用户消息Label中链接的颜色
  */
-@property (nonatomic, strong) UIColor *messageForMeLabelUrlColor;
+@property (nonatomic, strong) UIColor *messageForMeLabelUrlColor UI_APPEARANCE_SELECTOR;
 
 /**
  *  客服消息Label的颜色
  */
-@property (nonatomic, strong) UIColor *messageForOtherLabelColor;
+@property (nonatomic, strong) UIColor *messageForOtherLabelColor UI_APPEARANCE_SELECTOR;
 /**
  *  客服消息Label中链接的颜色
  */
-@property (nonatomic, strong) UIColor *messageForOtherLabelUrlColor;
+@property (nonatomic, strong) UIColor *messageForOtherLabelUrlColor UI_APPEARANCE_SELECTOR;
 
 
 

@@ -7,14 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 #import <KF5SDK/KF5SDK.h>
 
 #define KFColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 
 @interface AppDelegate ()
 
@@ -25,14 +23,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
-    ViewController *view = [[ViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
-    self.window.rootViewController = nav;
-    
-    [self.window makeKeyAndVisible];
-    
     // 设置日志状态
 #ifdef DEBUG
     [KFLogger enable:YES];
@@ -42,15 +32,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     NSLog(@"当前版本%@",[KFConfig shareConfig].version);
     
-    // 初始化配置信息,如果在此处填写了deviceToken,则无需主动调用KFPushUtil里的上传deviceToken的接口
-    KFUser *user = [[KFUser alloc]initWithHostName:@"https://tianxiang.kf5.com" appId:@"00155bee6f7945ea5aa21c6ffc35f7aa7ed0999d7c6b6029" email:@"iossdk@kf5.com" appName:@"IOSAPP" deviceToken:nil];
-    [[KFConfig shareConfig]initializeWithUser:user successBlock:^(KFUser *user,NSString *message) {
-        NSLog(@"success:%@",message);
-    } failureBlock:^(KFError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[[UIAlertView alloc]initWithTitle:@"提示" message:error.domain delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
-        });
-    }];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     
     // UI配置
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -60,13 +43,20 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
     // 注：视图均遵守UIAppearance协议，可以用appearance修改界面样式
     [[KFCreateRequestView appearance]setTextViewFont:[UIFont systemFontOfSize:15.f]];
     [[KFHelpCenterListView appearance]setCellTextLabelColor:[UIColor blackColor]];
     
     return YES;
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *token = [NSString stringWithFormat:@"%@",deviceToken];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
+    token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"deviceToken"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -77,6 +67,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    
+    // 进入后台是设置用户离线
+    [[KFChatManager sharedChatManager]setUserOffline];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

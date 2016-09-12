@@ -46,7 +46,7 @@
 /**
  *  用户的ID
  */
-@property (nonatomic, strong,readonly) NSNumber *Id;
+@property (nonatomic, strong,readonly) NSString *Id;
 /**
  *  用户邮箱
  */

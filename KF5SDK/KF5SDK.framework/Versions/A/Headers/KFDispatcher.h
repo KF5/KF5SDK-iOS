@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger,KFMessageType) {
     KFMessageTypeVoice,
     KFMessageTypeSystem,
     KFMessageTypeOther,
-    KFMessageTypeAIDocument
+    KFMessageTypeAI
 };
 /**
  *  消息来自于
@@ -97,7 +97,7 @@ typedef NS_ENUM(NSInteger,KFErrorCode) {
     KFErrorCodeParamError      = 3004,  // 参数错误
     KFErrorCodeNetWorkOff      = 30000, // 网络断开
     KFErrorCodeSocketOff       = 30001, // 与服务器断开连接
-    KFErrorCodeRecordError     = 500001,// 录音出错
+    KFErrorCodeRecordFailure   = 500001,// 录音出错
     KFErrorCodeAudioPalyError  = 500002,// 录音播放出错
     KFErrorCodeRecordTimeShort = 20000, // 录音时间过短
 };

@@ -12,7 +12,7 @@
 /**
  *  初始化方法
  *
- *  @param categorie 分区id
+ *  @param category 分区id
  *
  */
 - (instancetype)initWithCategory:(KFDocItem *)category;

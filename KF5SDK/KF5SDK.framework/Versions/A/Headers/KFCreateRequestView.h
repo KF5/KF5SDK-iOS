@@ -14,44 +14,43 @@
 
 @property (nonatomic, weak) UIButton *attBtn;
 
+@property (nonatomic, readonly, assign) CGFloat textViewHeight;
+
+#pragma mark - UIAppearance
+
 /**
  * placeholder的颜色
  */
-@property (nonatomic, strong) UIColor *placeholderTextColor;
+@property (nonatomic, strong) UIColor *placeholderTextColor UI_APPEARANCE_SELECTOR;
 
 /**
  * placeholder的内容
  */
-@property (nonatomic, strong) NSString *placeholderText;
+@property (nonatomic, strong) NSString *placeholderText UI_APPEARANCE_SELECTOR;
 
 /**
  * textView的颜色
  */
-@property (nonatomic, strong) UIColor *textViewColor;
+@property (nonatomic, strong) UIColor *textViewColor UI_APPEARANCE_SELECTOR;
 
 /**
  * textView的背景颜色
  */
-@property (nonatomic, strong) UIColor *textViewBackgroundColor;
+@property (nonatomic, strong) UIColor *textViewBackgroundColor UI_APPEARANCE_SELECTOR;
 
 /**
  * textView的字体
  */
-@property (nonatomic, strong) UIFont *textViewFont;
+@property (nonatomic, strong) UIFont *textViewFont UI_APPEARANCE_SELECTOR;
 
 /**
  * view的背景颜色
  */
-@property (nonatomic, strong) UIColor *viewBackgroundColor;
+@property (nonatomic, strong) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
 
 /**
  *  AttachmentButton的图片
  */
-@property (nonatomic, strong) UIImage *attachmentButtonImage;
-
-/**
- *  textView的高度
- */
-@property (nonatomic, readonly, assign) CGFloat textViewHeight;
+@property (nonatomic, strong) UIImage *attachmentButtonImage UI_APPEARANCE_SELECTOR;
 
 @end

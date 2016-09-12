@@ -18,28 +18,34 @@
  */
 @property (nonatomic, weak) UILabel *contentLabel;
 
+#pragma mark - UIAppearance
+
 /**
  * titleLabel的字体
  */
-@property (nonatomic, strong) UIFont *titleFont;
+@property (nonatomic, strong) UIFont *titleFont UI_APPEARANCE_SELECTOR;
 
 /**
  * titleLabel的颜色
  */
-@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *titleColor UI_APPEARANCE_SELECTOR;
 
 /**
  * contentLabel的字体
  */
-@property (nonatomic, strong) UIFont *contentFont;
+@property (nonatomic, strong) UIFont *contentFont UI_APPEARANCE_SELECTOR;
 
 /**
  * contentLabel的颜色
  */
-@property (nonatomic, strong) UIColor *contentColor;
+@property (nonatomic, strong) UIColor *contentColor UI_APPEARANCE_SELECTOR;
 /**
  * cell的背景颜色
  */
-@property (nonatomic, strong) UIColor *cellBackgroundColor;
+@property (nonatomic, strong) UIColor *cellBackgroundColor UI_APPEARANCE_SELECTOR;
+/**
+ *  tableView的背景颜色
+ */
+@property (nonatomic, strong) UIColor *tableViewBackgroundColor UI_APPEARANCE_SELECTOR;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "KF5BaseViewController.h"
+#import "KFDocItem.h"
 
 @interface KFPostViewController : KF5BaseViewController
 /**
@@ -22,8 +23,8 @@
 /**
  *  初始化方法
  *
- *  @param post_id 文档的id
+ *  @param post 文档id
  */
-- (instancetype)initWithPost_id:(NSString *)post_id;
+- (instancetype)initWithPost:(KFDocItem *)post;
 
 @end

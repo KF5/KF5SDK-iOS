@@ -12,7 +12,7 @@
 /**
  *  初始化方法
  *
- *  @param categorie 分类id
+ *  @param forum 分类id
  *
  */
 - (instancetype)initWithForum:(KFDocItem *)forum;

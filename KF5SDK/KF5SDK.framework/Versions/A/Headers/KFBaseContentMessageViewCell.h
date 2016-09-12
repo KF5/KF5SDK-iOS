@@ -13,7 +13,6 @@
 
 - (void)setMessageStatus:(KFMessageStatus)messageStatus;
 
-#pragma mark - UIAppearance
 /**
  *  头像
  */
@@ -35,12 +34,18 @@
 /**
  *  systemLabel文字颜色
  */
-@property (nonatomic, strong) UIColor *timeLabelTextColor;
+@property (nonatomic, strong) UIColor *timeLabelTextColor UI_APPEARANCE_SELECTOR;
 /**
  *  systemLabel字体大小
  */
-@property (nonatomic, strong) UIFont *timeLabelFont;
-
-
+@property (nonatomic, strong) UIFont *timeLabelFont UI_APPEARANCE_SELECTOR;
+/**
+ *  客服头像图片
+ */
+@property (nonatomic, strong) UIImage *agentImage UI_APPEARANCE_SELECTOR;
+/**
+ *  访客头像
+ */
+@property (nonatomic, strong) UIImage *visitorImage UI_APPEARANCE_SELECTOR;
 
 @end

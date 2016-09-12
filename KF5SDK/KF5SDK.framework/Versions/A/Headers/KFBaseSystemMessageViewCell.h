@@ -22,14 +22,14 @@
 /**
  *  systemLabel背景颜色
  */
-@property (nonatomic, strong) UIColor *systemBackgroundColor;
+@property (nonatomic, strong) UIColor *systemBackgroundColor UI_APPEARANCE_SELECTOR;
 /**
  *  systemLabel文字颜色
  */
-@property (nonatomic, strong) UIColor *systemLabelTextColor;
+@property (nonatomic, strong) UIColor *systemLabelTextColor UI_APPEARANCE_SELECTOR;
 /**
  *  systemLabel字体大小
  */
-@property (nonatomic, strong) UIFont *systemLabelFont;
+@property (nonatomic, strong) UIFont *systemLabelFont UI_APPEARANCE_SELECTOR;
 
 @end
