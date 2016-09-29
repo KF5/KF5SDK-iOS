@@ -177,7 +177,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
      } andError:^(KFError *error) {
         NSLog(@"%@",error);
      }];
-     /*/
+     */
 }
 
 // 反馈列表
@@ -191,7 +191,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [KFRequests showRequestListWithNavController:self.navigationController rightBarButtonActionBlock:^{
         [weakSelf helpCenter];
     }];
-    /*/
+    */
 }
 
 - (void)chat
